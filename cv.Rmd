@@ -1,0 +1,416 @@
+---
+name: Jaron
+surname: Arbet
+position: "Senior Bioinformatician"
+address: "UCLA Jonsson Comprehensive Cancer Center"
+www: jarbet.github.io
+email: "jaron.arbet@gmail.com"
+#to get the orcid: 0000-0001-6087-0428
+googlescholar: hbqQUw0AAAAJ
+osf: nrtbk # currently vitae doesn't support osf in the yaml header, need to add \osf{nrtbk} in the .tex file manulaly
+github: jarbet
+headcolor: 414141 # use black color
+date: "`r format(Sys.time(), '%B %Y')`"
+csl: apa-cv.csl # change this if you want to use other citation styles
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+    pandoc_args: ["--lua-filter=lua/strong.lua"]
+header-includes:
+  - \usepackage{hyperref}
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae);library(tibble)
+library(RefManageR);
+#rmarkdown::pandoc_version()
+```
+
+# Research Interests
+
+* Machine learning and predictive modeling
+* High-dimensional “Big Data”
+* Variable selection
+* Multi-omics cancer data integration
+* Robust nonparametric statistics
+
+# Work Experience
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Institution,
+  ~ Notes,
+  'April 2022 - Present',
+  'Senior Bioinformatician',
+  'University of California Los Angeles, CA\\newline \\hspace{1cm} \\newline',
+   NULL,
+
+  'Jan 2021 - April 2022',
+  'Staff Biostatistician',
+  'Edwards Lifesciences, Irvine, CA',
+   list(
+       'Develop statistical analysis plans and data monitoring for clinical trials',
+       'Power and sample size estimation',
+       'Clinical study reports for federal regulatory agencies',
+       'Perform analyses with large national database (STS/ACC TVT Registry) including propensity score matching for causal inference\\newline \\hspace{1cm} \\newline'
+        ),
+  
+  'Aug 2018 - Jan 2021',
+  'Postdoctoral Research Associate',
+  'University of Colorado Anschutz Medical Campus, Department of Biostatistics and Informatics, Aurora, CO',
+   list(
+       'Provided statistical consulting services',
+       'Published scientific manuscripts',
+       'Developed grants (statistical analysis plan, power/sample size estimation)',
+       'Supervised students and MS/MPH degree biostatisticians',
+       'Taught BIOS 6601 Intro stats course for 75 MPH students, and created annual 6-week data science machine learning short course',
+       'Develop new statistical methodology\\newline \\hspace{1cm} \\newline'
+        ),
+  
+  'June 2014 - July 2018',
+  'Research Assitant',
+  'University of Minnesota, Division of Biostatistics, Minneapolis, MN',
+   list(
+       'Developed variable selection methods for high dimensional genetic data and robust methods for estimating the genetic heritability of disease traits\\newline \\hspace{1cm} \\newline'
+    ),
+  
+  'June - Aug 2013',
+  'Statistical Genetics Research Intern',
+  'Dordt College, Department of Mathematics, Sioux Center, IA ',
+   list(
+       'Developed methods for aggregating different statistical tests together for greater sensitivity in detecting disease-related genes; resampling-based bias corrected tests\\newline \\hspace{1cm} \\newline'
+    ),
+  
+  'Sept 2012 - May 2014',
+  'Math and Statistics Tutor',
+  'Winona State University, Winona, MN',
+   NULL
+) %>%
+  detailed_entries(
+    where = Year,
+    with = Name,
+    what = Institution,
+    why = Notes,
+    .protect = FALSE
+  )
+```
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree,
+  ~ Advisor,
+  ~ Year,
+  ~ Institution,
+  ~ Where,
+  "PhD Biostatistics",
+  "GPA: 3.7\\newline \\hspace{1cm} \\newline",
+  "2014-2018",
+  "University of Minnesota",
+  "Minneapolis, MN, USA",
+  
+  "B.S. Mathematics and Statistics",
+  "GPA: 4.0 | \\textit{Summa Cum Laude}",
+  "2010-2014",
+  "Wiona State University",
+  "Winona, MN, USA"
+) %>%
+  detailed_entries(
+    what = Degree,
+    when = Year,
+    with = Institution,
+    where = Where,
+    why = Advisor,
+    .protect = FALSE
+  )
+```
+
+# Awards
+
+## Postdoctoral
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Institution,
+  ~ Supp,
+  ~ Amount,
+  '2023-2024',
+  'Staff appreciation and recognition (STAR)',
+  'UCLA Jonsson Comprehensive Cancer Center',
+   NA,
+   NA,
+ 
+  '2022-2023',
+  'Staff appreciation and recognition (STAR)',
+  'UCLA Jonsson Comprehensive Cancer Center',
+   NA,
+   NA,
+) %>%
+  detailed_entries(
+    where = Year,
+    with = Name,
+    what = Institution,
+    why = Supp,
+    when = Amount
+  )
+```
+
+
+## Student Awards
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Institution,
+  ~ Supp,
+  ~ Amount,
+  '2017-2018',
+  'Outstanding Research Assistant Award',
+  'University of Minnesota, Division of Biostatistics & Health Data Science',
+   NA,
+   NA,
+ 
+  '2025-2017',
+  'Interdisciplinary Biostatistics Training Grant in Genetics and Genomics',
+  'National Institute of General Medical Sciences',
+   NA,
+   NA,
+) %>%
+  detailed_entries(
+    where = Year,
+    with = Name,
+    what = Institution,
+    why = Supp,
+    when = Amount
+  ) 
+```
+
+## Competitions
+
+```{r}
+tribble(
+  ~Year, ~Name, ~Institution, ~Supp, ~Amount,
+  '2014', 'Midwest Undergraduate Data Analysis Competition (MUDAC)', 'School of Education, University of Michigan', '3\\textsuperscript{rd} place out of 20 teams from 14 universities\\newline \\hspace{1cm} \\newline', NA,
+  
+  '2014', '1st place in the “predictive-modeling class competition”', 'Winona State University Data Mining Course', NA, NA,
+  
+  '2013', 'Midwest Undergraduate Data Analysis Competition (MUDAC)', 'School of Education, University of Michigan', '2\\textsuperscript{nd} place out of 15 teams from 10 universities\\newline \\hspace{1cm} \\newline', NA,
+) %>% 
+  detailed_entries(
+    where = Year,
+    with = Name, 
+    what = Institution,
+    why = Supp,
+    when = Amount,
+    .protect = FALSE
+  ) 
+```
+
+# Journal Articles
+
+```{r}
+bibliography_entries("jaron_published.bib")
+```
+
+
+
+# Selected Presentations
+
+## Departmental
+```{r}
+bibliography_entries("Presentations_departmental.bib")
+```
+
+## Conferences
+
+```{r}
+bibliography_entries("Presentations_conferences.bib")
+```
+
+# Teaching Experience
+
+## Semester courses
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  ~ Desc,
+  'Fall 2019',
+  "BIOS 6601 – Applied Biostatistics I",
+  "University of Colorado Anschutz Medical Campus",
+  list(
+       "\\textbf{\\textit{Duty}}: Sole Instructor, completely redesigned all lectures, homework, quizzes, and exams",
+       "\\textbf{\\textit{Description}}: Applied biostatistical methods including descriptive and statistical inference; odds ratio and relative risk, probability theory, parameter estimation, tests for comparing statistics of two or more groups, correlation, linear regression, logistic regression and survival analysis.",
+    "\\textbf{\\textit{Credits}}: 3",
+    "\\textbf{\\textit{Audience}}: 75 Masters of Public Health (MPH) students\\newline \\hspace{1cm} \\newline"
+    )
+) %>%
+  detailed_entries(
+      where = Year,
+      with = Name,
+      what = Duty,
+      why = Desc,
+      .protect = FALSE
+      )
+```
+
+## Short courses
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  ~ Desc,
+  'Summer 2019, Fall 2020',
+  "Fundamentals of Data Science Literacy",
+  "University of Colorado Anschutz Medical Campus",
+  list(
+       "\\textbf{\\textit{Duty}}: lead organizer, developed and taught 3 machine learning lectures",
+       "\\textbf{\\textit{Description}}:6-week short course (2 hours/week) on data science with emphasis on how machine learning and data mining are used in biomedical research.  Topics included: 1) Overview of Data Science; 2) Introduction of Machine Learning in Biomedical Research; 3) Clustering and Pattern Finding (unsupervised Machine Learning); 4) Powerful Predictive Models and Variable Selection (supervised Machine Learning); 5) Fundamentals of Data Visualization; 6): Reproducible Research and Team Science",
+    "\\textbf{\\textit{Audience}}: ~20 medical researchers, mostly non-statisticians\\newline \\hspace{1cm} \\newline"
+    ),
+  
+  'Summer 2019, 2020',
+  "Introduction to Statistics",
+  "University of Colorado Anschutz Medical Campus",
+  list(
+       "\\textbf{\\textit{Duty}}: Instructor, developed and taught lectures on “Introduction to statistics”, study design, and survey design",
+       "\\textbf{\\textit{Description}}: Introductory statistics day-long short course for UCHealth nurses",
+    "\\textbf{\\textit{Audience}}: ~15 UCHealth Nurses\\newline \\hspace{1cm} \\newline"
+    )
+) %>%
+  detailed_entries(
+      where = Year,
+      with = Name,
+      what = Duty,
+      why = Desc,
+      .protect = FALSE
+      )
+```
+
+## Guest Lectures
+
+```{r}
+tribble(
+  ~ Year,
+  ~ Name,
+  ~ Duty,
+  ~ Desc,
+  'Nov 2019, Oct 2020',
+  "IPHY 5900 – Data Literacy in Biomedical Research",
+  "University of Colorado Boulder",
+  list(
+       "\\textbf{\\textit{Primary Instructor}}: Dr. Celine Marie Claire D. Vetter, Integrative Physiology",
+       "\\textbf{\\textit{Lecture}}:Machine Learning in Biomedical Research\\newline \\hspace{1cm} \\newline"
+    ),
+  
+  'Fall 2018',
+  "BIOS 6611 – Biostatistical Methods I",
+  "University of Colorado School of Public Health",
+  list(
+       "\\textbf{\\textit{Primary Instructor}}: Dr. Alex Kaizer",
+       "\\textbf{\\textit{Lecture}}: Linear Algebra Review\\newline \\hspace{1cm} \\newline"
+    )
+) %>%
+  detailed_entries(
+      where = Year,
+      with = Name,
+      what = Duty,
+      why = Desc,
+      .protect = FALSE
+      )
+```
+
+# Mentoring and supervising
+
+## University of California Los Angeles
+
+### Supervising students for data analysis projects {-}
+
+- Yuxi Song
+- Sattwik Banerjee
+- Adriana Wiggins
+
+## University of Colorado, Department of Biostatistics and Informatics
+
+### Supervising MPH/MS Statisticians {-}
+
+- Laura Grau (MPH), Nov 2018 – Jan 2021
+    - I supervised Laura on several projects which led to publications.
+
+### Supervising students for data analysis projects {-}
+
+- Yaxu Zhuang (PhD), Jan 2019 – Aug 2020
+- Rachel Weber (MS), Dec 2018 – April 2019
+
+### Thesis or Dissertation Committee Member (graduating year) {-}
+
+- Charlie Carpenter, Biostatistics MS thesis committee, Biostatistics (2020)
+- Rachel Blumhagen, Biostatistics PhD dissertation committee (2021)
+
+
+# Professional Service
+
+## Grant and Protocol Reviews
+
+- Scientific Advisory & Review Committee (SARC), Colorado Clinical and Translational Sciences Institute, University of Colorado – April 2019 to Jan 2021
+
+
+## Journal Reviewer:
+
+- Biometrics
+- Genetic Epidemiology
+- PeerJ
+
+
+## Committees/Other 
+
+### Department of Biostatistics and Informatics, University of Colorado {-}
+
+- Student Admissions Committee, Fall 2018 – Spring 2019
+- Volunteer Judge for CIDA Hackathon (24 hour data analysis competition), Jan. 2020
+
+### Biostatistics, Epidemiology, & Research Design Core of the Colorado Clinical and Translational Sciences Institute, University of Colorado {-}
+
+- Education Committee, Fall 2018 – Jan 2020
+
+# Software Skills
+
+## Proficient
+
+**R**
+
+* Over `r as.numeric(format(Sys.Date(), "%Y")) - 2011` years of experience with R for data analysis
+* I enjoy developing R packages to easily share documented code with colleagues and the broader research community.  Examples:
+    -  https://github.com/arbet003/discoMod
+* Parallel programming in R using multiple cpus
+
+**Quarto and Rmarkdown**
+
+* Reproducible research, manuscripts and reports
+* Reproducible HTML presentations.  Examples: [https://jarbet.github.io/presentations.html](https://jarbet.github.io/presentations.html)
+* Websites: [https://jarbet.github.io/](https://jarbet.github.io/)
+* Resume: this resume was made using Rmarkdown with the [vitae R package](https://github.com/mitchelloharawild/vitae)
+
+**Bayesian statistical programming**
+
+* Proficient with BUGS/JAGS; basic skills with STAN
+
+
+## Basic skills
+
+* Linux command line and bash scripts
+* Databricks
+* Microsoft Office
+* SAS

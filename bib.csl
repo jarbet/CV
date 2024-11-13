@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>APA Style - Full Author List, Descending Date, Numbered</title>
+    <id>http://www.zotero.org/styles/apa-full-authors-descending-numbered</id>
+    <link href="http://www.zotero.org/styles/apa" rel="self"/>
+    <author>
+      <name>Your Name</name>
+    </author>
+    <category citation-format="numeric"/>
+    <category field="psychology"/>
+    <updated>2024-11-11T00:00:00+00:00</updated>
+  </info>
+
+  <!-- Author macro to display all authors without truncation -->
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". " />
+      <label form="long" prefix=" " />
+    </names>
+  </macro>
+
+  <!-- Date macro for the year -->
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year" suffix=". " />
+    </date>
+  </macro>
+
+  <!-- Title macro -->
+  <macro name="title">
+    <text variable="title" font-style="italic" suffix=". " />
+  </macro>
+
+  <!-- Container title (journal) macro -->
+  <macro name="container-title">
+    <text variable="container-title" font-style="italic" suffix=", " />
+  </macro>
+
+  <!-- Volume, issue, and page numbers -->
+  <macro name="volume-issue-page">
+    <group delimiter=", ">
+      <text variable="volume" font-weight="bold" />
+      <text variable="issue" prefix="(" suffix=")" />
+      <text variable="page" prefix="pp. " suffix="." />
+    </group>
+  </macro>
+
+  <!-- Citation section (numeric format) -->
+  <citation>
+    <sort>
+      <key variable="issued" sort="descending"/>
+      <key variable="author" />
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=", " vertical-align="sup">
+      <text variable="citation-number" />
+    </layout>
+  </citation>
+
+  <!-- Bibliography section with numbered entries, sorted by descending date -->
+  <bibliography>
+    <sort>
+      <key variable="issued" sort="descending"/>
+      <key variable="author" />
+    </sort>
+    <layout hanging-indent="true" delimiter=". ">
+      <text variable="citation-number" suffix=". " />
+      <text macro="author" suffix=" " />
+      <text macro="issued" suffix=" " />
+      <text macro="title" />
+      <text macro="container-title" />
+      <text macro="volume-issue-page" />
+      <text variable="DOI" prefix="https://doi.org/" />
+    </layout>
+  </bibliography>
+</style>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" page-range-format="expanded">
   <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
   <info>
@@ -1485,7 +1485,7 @@
       </else-if>
     </choose>
   </macro>
-  <citation et-al-min="21" et-al-use-first="19" et-al-use-last="true">
+  <citation et-al-min="21" et-al-use-first="30" et-al-use-last="true">
     <sort>
       <key macro="date-sort-group" sort="descending"/>
       <key macro="date-sort-date" sort="descending"/>
@@ -1524,7 +1524,7 @@
       <text variable="annote" display="block"/>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="21" et-al-use-first="19" et-al-use-last="true" entry-spacing="0" line-spacing="2">
+  <bibliography hanging-indent="true" et-al-min="21" et-al-use-first="30" et-al-use-last="true" entry-spacing="0" line-spacing="2">
     <sort>
       <key macro="date-sort-group" sort="descending"/>
       <key macro="date-sort-date" sort="descending"/>
