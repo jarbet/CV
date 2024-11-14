@@ -45,7 +45,7 @@ tribble(
   ~ Notes,
   'April 2022 - Present',
   'Senior Bioinformatician',
-  'University of California Los Angeles, CA\\newline \\hspace{1cm} \\newline',
+  'Jonsson Comprehensive Cancer Center, University of California Los Angeles, CA\\newline \\hspace{1cm} \\newline',
    NULL,
 
   'Jan 2021 - April 2022',
