@@ -7,7 +7,6 @@ www: jarbet.github.io
 email: "jaron.arbet@gmail.com"
 #to get the orcid: 0000-0001-6087-0428
 googlescholar: hbqQUw0AAAAJ
-osf: nrtbk # currently vitae doesn't support osf in the yaml header, need to add \osf{nrtbk} in the .tex file manulaly
 github: jarbet
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
@@ -130,6 +129,14 @@ tribble(
   )
 ```
 
+\newpage
+
+# Peer-reviewed Publications
+
+```{r}
+bibliography_entries("jaron_published.bib")
+```
+
 # Awards
 
 ## Postdoctoral
@@ -178,7 +185,7 @@ tribble(
    NA,
    NA,
  
-  '2025-2017',
+  '2015-2017',
   'Interdisciplinary Biostatistics Training Grant in Genetics and Genomics',
   'National Institute of General Medical Sciences',
    NA,
@@ -214,25 +221,168 @@ tribble(
   ) 
 ```
 
-# Journal Articles
-
-```{r}
-bibliography_entries("jaron_published.bib")
-```
-
 
 
 # Selected Presentations
 
 ## Departmental
 ```{r}
-bibliography_entries("Presentations_departmental.bib")
+#bibliography_entries("Presentations_departmental.bib")
+
+tribble(
+  ~Year, ~Name, ~Location, ~Notes,
+  
+  '2024',
+  'Robust regression for noisy biological data',
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentation-ordinal-regression/ordinal_regression.html}\\newline \\hspace{1cm} \\newline'
+    ),
+ 
+  '2024',
+  'Linear regression diagnostics',
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentation-regression-diagnostics/regression_diagnostics.html}\\newline \\hspace{1cm} \\newline'
+    ),
+
+  '2024',
+  'Causal inference with observational data using propensity score matching',
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentation-causal-inference-matching/causal_inference_matching.html}\\newline \\hspace{1cm} \\newline'
+        ),
+
+ '2023',
+  'Automatic feature selection and engineering with MARS',
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentation-mars.github.io/presentation-mars.html}\\newline \\hspace{1cm} \\newline'
+        ),
+
+  '2022',
+  'Introduction to Bayesian statistics',
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentations/2022-08-25_Bayesian_stats.pdf}\\newline \\hspace{1cm} \\newline'
+        ),
+  
+  '2021',
+  'Multiomics cancer data analysis',
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentations/2021-11-21_multiomics_cancer.pdf}\\newline \\hspace{1cm} \\newline'
+        ),
+ 
+ '2021',
+  'Interpretable machine learning',
+  'Center for Innovative Design and Analysis, University of Colorado, Denver, CO',
+  list(
+      '\\url{https://jarbet.github.io/presentations/2020-01-21_interpretable_machine_learning.pdf}\\newline \\hspace{1cm} \\newline'
+        ),
+ 
+ '2021',
+  'Differential Network Analysis of Gene Modules',
+  'Systems Genetics and Bioinformatics Research Lab, University of Colorado, Denver, CO',
+  NULL,
+ 
+ '2018',
+ 'Frequentist versus Bayesian Approaches to Statistics: A Debate',
+  'Department of Biostatistics and Informatics, University of Colorado, Denver, CO',
+  NULL,
+ 
+ '2017',
+ 'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies',
+  'University of Minnesota Biostatistics Student Seminar Series, Minneapolis, MN',
+  NULL,
+ 
+ '2016',
+ 'A General framework for Association Tests with Multivariate Traits in Large-Scale Genomics Studies',
+  'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN',
+  NULL,
+ 
+  '2016',
+ 'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies',
+  'School of Public Health Research Day, University of Minnesota, Minneapolis, MN',
+  NULL,
+ 
+ '2016',
+ 'Penalized Regression for High-Dimensional Genetic Association Testing',
+  'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN',
+  NULL
+) %>% 
+  detailed_entries(
+    with = Name,
+    what = Location, 
+    why = Notes,
+    when = Year,
+    .protect = FALSE
+    )
 ```
+
+\newpage
 
 ## Conferences
 
 ```{r}
-bibliography_entries("Presentations_conferences.bib")
+# bibliography_entries("Presentations_conferences.bib")
+
+tribble(
+  ~Year, ~Name, ~Location, ~Notes, ~Type,
+  
+  '2024',
+  'Methylome-Genome Interactions Define Disease Aggression in Localized Prostate Cancer',
+  'RECOMB/ISCB Conference on Regulatory and Systems Genomics, Los Angeles, CA',
+  NULL,
+  'Poster',
+  
+  '2022',
+  'Triplet matching: propensity score matching with 3 groups',
+  '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)',
+  list(
+      '\\url{https://jarbet.github.io/presentations/20220422_triplet_matching.pdf}\\newline \\hspace{1cm} \\newline'
+        ),
+  'Talk',
+  
+  '2022',
+  'Statistical Considerations and Methods to Utilize Real World Evidence in Medical Device Evaluation',
+  '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)',
+  NULL,
+  'Panel Co-organizer',
+  
+  '2017',
+  'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies using Generalized Estimating Equations',
+  'Joint Statistical Meetings (JSM), Baltimore, MD',
+  NULL,
+  'Poster',
+  
+  '2016',
+  'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies',
+  'Eastern North American Region International Biometric Society (ENAR), Austin, TX',
+  NULL,
+  'Poster',
+  
+  '2013',
+  'What now? Post-Hoc Approaches for Gene-based Rare-Variant Tests of Association',
+  'American Society of Human Genetics Conference (ASHG), Boston, MA',
+  NULL,
+  'Poster',
+  
+  '2013',
+  'General Approaches for Combining Rare Variant Association Tests Provide Improved Power Across a Wide Range of Genetic Architectures',
+  'American Society of Human Genetics Conference (ASHG), Boston, MA',
+  NULL,
+  'Poster'
+  
+) %>% 
+  detailed_entries(
+    with = Name,
+    what = Location, 
+    why = Notes,
+    when = Year,
+    where = Type,
+    .protect = FALSE
+    )
 ```
 
 # Teaching Experience
@@ -277,7 +427,7 @@ tribble(
   "University of Colorado Anschutz Medical Campus",
   list(
        "\\textbf{\\textit{Duty}}: lead organizer, developed and taught 3 machine learning lectures",
-       "\\textbf{\\textit{Description}}:6-week short course (2 hours/week) on data science with emphasis on how machine learning and data mining are used in biomedical research.  Topics included: 1) Overview of Data Science; 2) Introduction of Machine Learning in Biomedical Research; 3) Clustering and Pattern Finding (unsupervised Machine Learning); 4) Powerful Predictive Models and Variable Selection (supervised Machine Learning); 5) Fundamentals of Data Visualization; 6): Reproducible Research and Team Science",
+       "\\textbf{\\textit{Description}}: 6-week short course (2 hours/week) on data science with emphasis on how machine learning and data mining are used in biomedical research.  Topics included: 1) Overview of Data Science; 2) Introduction of Machine Learning in Biomedical Research; 3) Clustering and Pattern Finding (unsupervised Machine Learning); 4) Powerful Predictive Models and Variable Selection (supervised Machine Learning); 5) Fundamentals of Data Visualization; 6): Reproducible Research and Team Science",
     "\\textbf{\\textit{Audience}}: ~20 medical researchers, mostly non-statisticians\\newline \\hspace{1cm} \\newline"
     ),
   
@@ -389,21 +539,29 @@ tribble(
 
 ## Proficient
 
-**R**
+### R {-}
 
-* Over `r as.numeric(format(Sys.Date(), "%Y")) - 2011` years of experience with R for data analysis
-* I enjoy developing R packages to easily share documented code with colleagues and the broader research community.  Examples:
+* Over **`r as.numeric(format(Sys.Date(), "%Y")) - 2011` years** of experience with R for data analysis
+* I enjoy **developing R packages** to easily share documented code with colleagues and the broader research community.  Examples:
     -  https://github.com/arbet003/discoMod
-* Parallel programming in R using multiple cpus
+* **Parallel programming** in R using multiple cpus
 
-**Quarto and Rmarkdown**
+### git/github {-}
+
+* Version control
+* Used daily at UCLA
+* Collaborating with others on projects
+* Review colleagues code
+* Assign issues to team members
+
+### Quarto and Rmarkdown {-}
 
 * Reproducible research, manuscripts and reports
 * Reproducible HTML presentations.  Examples: [https://jarbet.github.io/presentations.html](https://jarbet.github.io/presentations.html)
 * Websites: [https://jarbet.github.io/](https://jarbet.github.io/)
 * Resume: this resume was made using Rmarkdown with the [vitae R package](https://github.com/mitchelloharawild/vitae)
 
-**Bayesian statistical programming**
+### Bayesian statistical programming {-}
 
 * Proficient with BUGS/JAGS; basic skills with STAN
 
@@ -411,6 +569,7 @@ tribble(
 ## Basic skills
 
 * Linux command line and bash scripts
+   + Daily use of a high-performance computing cluster at UCLA
 * Databricks
 * Microsoft Office
 * SAS
