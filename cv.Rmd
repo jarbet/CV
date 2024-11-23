@@ -462,7 +462,7 @@ tribble(
   "University of Colorado Boulder",
   list(
        "\\textbf{\\textit{Primary Instructor}}: Dr. Celine Marie Claire D. Vetter, Integrative Physiology",
-       "\\textbf{\\textit{Lecture}}:Machine Learning in Biomedical Research\\newline \\hspace{1cm} \\newline"
+       "\\textbf{\\textit{Lecture}}: Machine Learning in Biomedical Research\\newline \\hspace{1cm} \\newline"
     ),
   
   'Fall 2018',
@@ -551,7 +551,7 @@ tribble(
 * Version control
 * Used daily at UCLA
 * Collaborating with others on projects
-* Review colleagues code
+* Review colleagues' code
 * Assign issues to team members
 
 ### Quarto and Rmarkdown {-}
