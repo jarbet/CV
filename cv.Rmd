@@ -15,6 +15,7 @@ output:
   vitae::awesomecv:
     keep_tex: true
     pandoc_args: ["--lua-filter=lua/strong.lua"]
+    number_sections: false
 header-includes:
   - \usepackage{hyperref}
   - \usepackage{fontawesome5}
@@ -28,7 +29,7 @@ library(RefManageR);
 #rmarkdown::pandoc_version()
 ```
 
-# Research Interests
+# \faBookReader \text{ Research Interests}
 
 * Machine learning and predictive modeling
 * High-dimensional “Big Data”
@@ -139,9 +140,10 @@ tribble(
 bibliography_entries("jaron_published.bib")
 ```
 
-# \faTrophy \text{ Awards}
+# \faAward \text{ Awards}
 
-## Postdoctoral
+## \faSquare \ \ \text{Postdoctoral}
+
 
 ```{r}
 tribble(
@@ -171,8 +173,8 @@ tribble(
   )
 ```
 
+## \faSquare \ \ \text{Student Awards}
 
-## Student Awards
 
 ```{r}
 tribble(
@@ -202,7 +204,8 @@ tribble(
   ) 
 ```
 
-## Competitions
+## \faSquare \ \ \text{Competitions}
+
 
 ```{r}
 tribble(
@@ -224,9 +227,9 @@ tribble(
 ```
 
 
-# Presentations
+# \faChartBar \text{ Presentations}
 
-## Departmental
+## \faSquare \ \ \text{Departmental}
 ```{r}
 #bibliography_entries("Presentations_departmental.bib")
 
@@ -321,9 +324,8 @@ tribble(
     )
 ```
 
-\newpage
 
-## Conferences
+## \faSquare \ \ \text{Conferences}
 
 ```{r}
 # bibliography_entries("Presentations_conferences.bib")
@@ -386,9 +388,9 @@ tribble(
     )
 ```
 
-# Teaching Experience
+# \faChalkboardTeacher \text{ Teaching Experience}
 
-## Semester courses
+## \faSquare \ \ \text{Semester courses}
 
 ```{r}
 tribble(
@@ -415,7 +417,7 @@ tribble(
       )
 ```
 
-## Short courses
+## \faSquare \ \ \text{Short courses}
 
 ```{r}
 tribble(
@@ -450,7 +452,7 @@ tribble(
       )
 ```
 
-## Guest Lectures
+## \faSquare \ \ \text{Guest Lectures}
 
 ```{r}
 tribble(
@@ -483,9 +485,11 @@ tribble(
       )
 ```
 
-# Mentoring and supervising
+\newpage
 
-## University of California Los Angeles
+# \faUsers \text{ Mentoring and supervising}
+
+## \faSquare \ \ \text{University of California Los Angeles}
 
 ### Supervising students for data analysis projects {-}
 
@@ -493,7 +497,7 @@ tribble(
 - Sattwik Banerjee
 - Adriana Wiggins
 
-## University of Colorado, Department of Biostatistics and Informatics
+## \faSquare \ \ \text{University of Colorado, Department of Biostatistics and Informatics}
 
 ### Supervising MPH/MS Statisticians {-}
 
@@ -511,21 +515,19 @@ tribble(
 - Rachel Blumhagen, Biostatistics PhD dissertation committee (2021)
 
 
-# Professional Service
+# \faHandsHelping \text{ Professional Service}
 
-## Grant and Protocol Reviews
+## \faSquare \ \ \text{Grant and Protocol Reviews}
 
 - Scientific Advisory & Review Committee (SARC), Colorado Clinical and Translational Sciences Institute, University of Colorado – April 2019 to Jan 2021
 
-
-## Journal Reviewer:
+## \faSquare \ \ \text{Journal Reviewer}
 
 - Biometrics
 - Genetic Epidemiology
 - PeerJ
 
-
-## Committees/Other 
+## \faSquare \ \ \text{Committees/Other}
 
 ### Department of Biostatistics and Informatics, University of Colorado {-}
 
@@ -536,18 +538,20 @@ tribble(
 
 - Education Committee, Fall 2018 – Jan 2020
 
-# Software Skills
+\newpage
+
+# \faDesktop \text{ Software Skills}
 
 ## Proficient
 
-### R {-}
+\faRProject
 
 * Over **`r as.numeric(format(Sys.Date(), "%Y")) - 2011` years** of experience with R for data analysis
 * I enjoy **developing R packages** to easily share documented code with colleagues and the broader research community.  Examples:
     -  https://github.com/arbet003/discoMod
 * **Parallel programming** in R using multiple cpus
 
-### git/github {-}
+\faGithub \textbf{ git/github}
 
 * Version control
 * Used daily at UCLA
