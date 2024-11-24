@@ -17,7 +17,7 @@ output:
     pandoc_args: ["--lua-filter=lua/strong.lua"]
 header-includes:
   - \usepackage{hyperref}
-  #- \usepackage{fontawesome5}
+  - \usepackage{fontawesome5}
 ---
 
 

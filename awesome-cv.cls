@@ -75,7 +75,7 @@
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \defaultfontfeatures{Extension = .otf}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 % Add support of academia icons
 \usepackage{academicons}
 \RequirePackage[default,opentype]{sourcesanspro}
