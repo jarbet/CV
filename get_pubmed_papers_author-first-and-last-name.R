@@ -1,7 +1,7 @@
-# This script only gets author last name.  For both first and last name, use get_pubmed_papers_author-first-and-last-name.R
 library(rentrez)
 library(xml2)
 library(RefManageR)
+library(dplyr)
 
 # Search for articles by Jaron Arbet in PubMed
 search_results <- entrez_search(db="pubmed", term="Jaron Arbet[Author]", retmax=100)
@@ -9,6 +9,7 @@ search_results <- entrez_search(db="pubmed", term="Jaron Arbet[Author]", retmax=
 # Extract the list of PubMed IDs (PMIDs)
 pmids <- search_results$ids
 
+# Function to get full metadata from PubMed
 # Function to get full metadata from PubMed
 get_metadata_from_pubmed <- function(pmid) {
     # Query PubMed using the PMID
@@ -27,10 +28,18 @@ get_metadata_from_pubmed <- function(pmid) {
         xml_find_first(".//ArticleTitle") %>%
         xml_text()
     
+    # Extract authors' first and last names
     authors <- xml_data %>%
-        xml_find_all(".//Author/LastName") %>%
-        xml_text() %>%
-        paste(collapse = ", ")  # Combine authors into a single string
+        xml_find_all(".//Author") %>%
+        purrr::map_chr(~ {
+            first_name <- xml2::xml_find_first(.x, ".//ForeName") %>%
+                xml_text()
+            last_name <- xml2::xml_find_first(.x, ".//LastName") %>%
+                xml_text()
+            # Combine first and last names
+            paste(first_name, last_name)
+        }) %>%
+        paste(collapse = ", ")  # Combine all authors into a single string
     
     journal <- xml_data %>%
         xml_find_first(".//Journal/Title") %>%
@@ -71,6 +80,7 @@ get_metadata_from_pubmed <- function(pmid) {
     )
 }
 
+
 # Extract metadata for each PMID
 metadata_list <- lapply(pmids, get_metadata_from_pubmed)
 
@@ -96,6 +106,4 @@ create_bib_entry <- function(pmid, metadata) {
 bib_entries <- mapply(create_bib_entry, pmids, metadata_list)
 
 # Write the .bib entries to a .bib file
-writeLines(bib_entries, "jaron_published.bib")
-
-cat("BibTeX entries written to 'jaron_published.bib'.\n")
+writeLines(bib_entries, "jaron_published_author-first-and-last-name.bib")
