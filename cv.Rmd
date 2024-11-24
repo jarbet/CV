@@ -17,6 +17,7 @@ output:
     pandoc_args: ["--lua-filter=lua/strong.lua"]
 header-includes:
   - \usepackage{hyperref}
+  #- \usepackage{fontawesome5}
 ---
 
 
@@ -35,7 +36,8 @@ library(RefManageR);
 * Multi-omics cancer data integration
 * Robust nonparametric statistics
 
-# Work Experience
+
+# \faBriefcase \text{ Work Experience}
 
 ```{r}
 tribble(
@@ -98,7 +100,7 @@ tribble(
   )
 ```
 
-# Education
+# \faGraduationCap \text{ Education}
 
 ```{r}
 tribble(
@@ -131,13 +133,13 @@ tribble(
 
 \newpage
 
-# Peer-reviewed Publications
+# \faBook \text{ Peer-reviewed Publications}
 
 ```{r}
 bibliography_entries("jaron_published.bib")
 ```
 
-# Awards
+# \faTrophy \text{ Awards}
 
 ## Postdoctoral
 
@@ -222,8 +224,7 @@ tribble(
 ```
 
 
-
-# Selected Presentations
+# Presentations
 
 ## Departmental
 ```{r}
