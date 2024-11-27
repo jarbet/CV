@@ -542,7 +542,7 @@ tribble(
 
 # \faDesktop \text{ Software Skills}
 
-## Proficient
+## \faSquare \ \ \text{Proficient}
 
 \faRProject
 
@@ -562,7 +562,7 @@ tribble(
 ### Quarto and Rmarkdown {-}
 
 * Reproducible research, manuscripts and reports
-* Reproducible HTML presentations.  Examples: [https://jarbet.github.io/presentations.html](https://jarbet.github.io/presentations.html)
+* Reproducible HTML presentations.  Examples: [https://jarbet.github.io/presentations](https://jarbet.github.io/presentations)
 * Websites: [https://jarbet.github.io/](https://jarbet.github.io/)
 * Resume: this resume was made using Rmarkdown with the [vitae R package](https://github.com/mitchelloharawild/vitae)
 
@@ -570,8 +570,7 @@ tribble(
 
 * Proficient with BUGS/JAGS; basic skills with STAN
 
-
-## Basic skills
+## \faSquare \ \ \text{Basic skills}
 
 * Linux command line and bash scripts
    + Daily use of a high-performance computing cluster at UCLA
