@@ -74,7 +74,7 @@ tribble(
         ),
   
   'June 2014 - July 2018',
-  'Research Assitant',
+  'Research Assistant',
   'University of Minnesota, Division of Biostatistics, Minneapolis, MN',
    list(
        'Developed variable selection methods for high dimensional genetic data and robust methods for estimating the genetic heritability of disease traits\\newline \\hspace{1cm} \\newline'
