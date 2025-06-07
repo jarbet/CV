@@ -1,50 +1,86 @@
+# Name of the workflow as it appears in GitHub Actions UI
 name: Weekly CV Update
 
+# Triggers for this workflow
 on:
+  # Schedule the workflow to run weekly
+  # Your chosen cron expression: Every Monday at 9:00 UTC
   schedule:
-    - cron: '0 9 * * 1'  # Every Monday at 9:00 UTC
+    - cron: '0 9 * * 1'
+
+  # Allows you to run this workflow manually from the Actions tab in GitHub
   workflow_dispatch:
 
+# Permissions granted to the workflow job
+# 'contents: write' is crucial for the action to be able to commit and push files back to the repo.
+permissions:
+  contents: write # This line is essential for git push to work
+
+# Define a single job named 'build-cv'
 jobs:
   build-cv:
+    # The runner environment for this job
     runs-on: ubuntu-latest
 
+    # Steps in the job
     steps:
+      # Step 1: Checkout the repository code
+      # This action brings your repository's code onto the runner.
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Set up R environment
+      # This action sets up R on the runner, making it available for subsequent steps.
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.x' # Explicitly set R version
 
+      # Step 3: Cache R packages
+      # This step caches R packages to speed up subsequent workflow runs.
       - name: Cache R packages
         uses: actions/cache@v3
         with:
-          path: ~/.local/share/R
-          key: r-${{ runner.os }}-r-lib-${{ hashFiles('**/*.R', '**/*.Rmd') }}
+          path: ~/.local/share/R # Path where R packages are stored
+          key: r-${{ runner.os }}-r-lib-${{ hashFiles('**/*.R', '**/*.Rmd') }} # Cache key based on OS and R scripts
           restore-keys: |
-            r-${{ runner.os }}-r-lib-
+            r-${{ runner.os }}-r-lib- # Fallback restore key
 
+      # Step 4: Install system dependencies
+      # These are often required for R Markdown to PDF compilation (e.g., LaTeX, Pandoc)
+      # and for some R packages that have system library dependencies.
       - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
-                                  texlive texlive-latex-extra texlive-fonts-recommended \
-                                  pandoc pandoc-citeproc
+                                   texlive texlive-latex-extra texlive-fonts-recommended \
+                                   pandoc pandoc-citeproc
 
+      # Step 5: Install R packages
+      # Install all necessary R packages for your scripts.
+      # Added 'httr' and 'jsonlite' which are often used with APIs like ORCID.
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite"))'
+          Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid"), repos = "https://cran.r-project.org")'
 
+      # Step 6: Run the ORCID paper collection script
+      # This script should generate/update jaron_published_orcid.bib.
       - name: Run ORCID paper collection script
         run: Rscript get_orcid_papers.R
 
+      # Step 7: Knit the CV R Markdown file to PDF
+      # This command will compile your R Markdown file into cv.pdf.
       - name: Knit CV
         run: Rscript -e 'rmarkdown::render("cv.Rmd")'
 
+      # Step 8: Commit and push the updated files
+      # Using stefanzweifel/git-auto-commit-action for simplicity and robustness.
+      # It automatically handles git configuration, adding, committing, and pushing.
       - name: Commit and push updated files
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add jaron_published_orcid.bib cv.pdf || echo "No changes to commit"
-          git diff --cached --quiet || git commit -m "Automated weekly update of CV and bibliography"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated weekly update of CV and bibliography" # Message for the commit
+          # Specify the files to commit. This ensures only these files are handled.
+          files: |
+            jaron_published_orcid.bib
+            cv.pdf
