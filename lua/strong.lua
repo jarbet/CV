@@ -1,29 +1,32 @@
 function Inlines(inlines)
   local i = 1
-  while i <= (#inlines - 2) do
+  while i <= (#inlines - 1) do
     local a = inlines[i]
     local b = inlines[i+1]
     local c = inlines[i+2]
 
-    if a.t == "Str" and a.text == "Arbet," and
-       b.t == "Space" and
-       c.t == "Str" and c.text == "J.," then
-
-      -- Replace three tokens (Arbet, + Space + J.,) with one bolded token
-      inlines[i] = pandoc.Strong({
-        pandoc.Str("Arbet,"),
-        pandoc.Space(),
-        pandoc.Str("J.,")
-      })
-
-      -- Remove the next two tokens (Space + J.,)
-      table.remove(inlines, i+1)
-      table.remove(inlines, i+1)
-
-      -- No increment because we modified the table
-    else
-      i = i + 1
+    if a.t == "Str" and a.text == "Arbet," and b and b.t == "Space" then
+      -- Case 1: Arbet, J.,
+      if c and c.t == "Str" and c.text == "J.," then
+        inlines[i] = pandoc.Strong({
+          pandoc.Str("Arbet,"),
+          pandoc.Space(),
+          pandoc.Str("J.")
+        })
+        inlines[i+1] = pandoc.Str(",") -- just the comma
+        table.remove(inlines, i+2)     -- remove the original "J.,"
+      -- Case 2: Arbet, J.
+      elseif c and c.t == "Str" and c.text == "J." then
+        inlines[i] = pandoc.Strong({
+          pandoc.Str("Arbet,"),
+          pandoc.Space(),
+          pandoc.Str("J.")
+        })
+        table.remove(inlines, i+1) -- remove Space
+        table.remove(inlines, i+1) -- remove J.
+      end
     end
+    i = i + 1
   end
   return inlines
 end
