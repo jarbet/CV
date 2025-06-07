@@ -36,7 +36,12 @@ jobs:
         with:
           r-version: '4.x' # Explicitly set R version
 
-      # Step 3: Cache R packages
+      # Step 3: Set up TinyTeX (for LaTeX compilation)
+      # This action installs a lightweight LaTeX distribution optimized for R.
+      - name: Set up TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2
+
+      # Step 4: Cache R packages
       # This step caches R packages to speed up subsequent workflow runs.
       - name: Cache R packages
         uses: actions/cache@v3
@@ -46,24 +51,21 @@ jobs:
           restore-keys: |
             r-${{ runner.os }}-r-lib- # Fallback restore key
 
-      # Step 4: Install system dependencies
-      # These are often required for R Markdown to PDF compilation (e.g., LaTeX, Pandoc)
-      # and for some R packages that have system library dependencies.
+      # Step 5: Install system dependencies
+      # Only install non-LaTeX related system dependencies here.
       - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
-                                   texlive texlive-latex-extra texlive-fonts-recommended \
-                                   pandoc # Removed pandoc-citeproc as it's often bundled or not a direct apt package
+                                   pandoc # Removed texlive related packages, as TinyTeX handles them
 
-      # Step 5: Install R packages
+      # Step 6: Install R packages
       # Install all necessary R packages for your scripts.
-      # Added 'httr' and 'jsonlite' which are often used with APIs like ORCID.
       - name: Install R packages
         run: |
           Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid"), repos = "https://cran.r-project.org")'
 
-      # Step 6: Run the ORCID paper collection script
+      # Step 7: Run the ORCID paper collection script
       # This script should generate/update jaron_published_orcid.bib.
       # The ORCID_TOKEN secret is passed as an environment variable.
       - name: Run ORCID paper collection script
@@ -71,12 +73,12 @@ jobs:
         env:
           ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }} # Pass the ORCID_TOKEN from GitHub Secrets
 
-      # Step 7: Knit the CV R Markdown file to PDF
+      # Step 8: Knit the CV R Markdown file to PDF
       # This command will compile your R Markdown file into cv.pdf.
       - name: Knit CV
         run: Rscript -e 'rmarkdown::render("cv.Rmd")'
 
-      # Step 8: Commit and push the updated files
+      # Step 9: Commit and push the updated files
       # Using stefanzweifel/git-auto-commit-action for simplicity and robustness.
       # It automatically handles git configuration, adding, committing, and pushing.
       - name: Commit and push updated files
