@@ -1,17 +1,29 @@
-function Block(el)
-    -- Check if the block is of type Para or Plain
-    if el.t == "Para" or el.t == "Plain" then
-        -- Iterate through each element in the block
-        for k, _ in ipairs(el.content) do
-            -- Check if the element is a string (text) and if the text contains "Arbet"
-            if el.content[k].t == "Str" then
-                -- If the text contains "Arbet", replace it with the bolded version
-                if el.content[k].text:find("Arbet,") then
-                    -- Replace "Arbet" with bolded "Arbet"
-                    el.content[k] = pandoc.Strong(pandoc.Str("Arbet,"))
-                end
-            end
-        end
+function Inlines(inlines)
+  local i = 1
+  while i <= (#inlines - 2) do
+    local a = inlines[i]
+    local b = inlines[i+1]
+    local c = inlines[i+2]
+
+    if a.t == "Str" and a.text == "Arbet," and
+       b.t == "Space" and
+       c.t == "Str" and c.text == "J.," then
+
+      -- Replace three tokens (Arbet, + Space + J.,) with one bolded token
+      inlines[i] = pandoc.Strong({
+        pandoc.Str("Arbet,"),
+        pandoc.Space(),
+        pandoc.Str("J.,")
+      })
+
+      -- Remove the next two tokens (Space + J.,)
+      table.remove(inlines, i+1)
+      table.remove(inlines, i+1)
+
+      -- No increment because we modified the table
+    else
+      i = i + 1
     end
-    return el
+  end
+  return inlines
 end
