@@ -48,8 +48,17 @@ tribble(
   ~ Notes,
   'April 2022 - Present',
   'Senior Bioinformatician',
-  'Jonsson Comprehensive Cancer Center, University of California Los Angeles, CA\\newline \\hspace{1cm} \\newline',
-   NULL,
+  'Jonsson Comprehensive Cancer Center, University of California Los Angeles, CA',
+  list(
+       'Analysis of cancer molecular data: whole genome sequencing, RNA-Seq, DNA methylation, proteomics',
+       'Biomarker identification: among thousands of molecular features, which are most associated with cancer outcomes?',
+       'Daily git/github use for version control and collaboration',
+       'Supervised machine learning for predicting cancer prognosis',
+       'Unsupervised machine learning for deriving cancer subtypes',
+       'Supervising undegraduate and graduate students on projects',
+       'Develop open-source R packages for sharing software with broader scientific community',
+       'Create statistical analysis plans and power/sample size estimation for grants\\newline \\hspace{1cm} \\newline'
+        ),
 
   'Jan 2021 - April 2022',
   'Staff Biostatistician',
@@ -132,12 +141,11 @@ tribble(
   )
 ```
 
-\newpage
 
 # \faBook \text{ Peer-reviewed Publications}
 
 ```{r}
-bibliography_entries("jaron_published.bib")
+bibliography_entries("jaron_published_orcid.bib")
 ```
 
 # \faAward \text{ Awards}
@@ -485,7 +493,6 @@ tribble(
       )
 ```
 
-\newpage
 
 # \faUsers \text{ Mentoring and supervising}
 
@@ -538,7 +545,6 @@ tribble(
 
 - Education Committee, Fall 2018 – Jan 2020
 
-\newpage
 
 # \faDesktop \text{ Software Skills}
 
@@ -548,7 +554,8 @@ tribble(
 
 * Over **`r as.numeric(format(Sys.Date(), "%Y")) - 2011` years** of experience with R for data analysis
 * I enjoy **developing R packages** to easily share documented code with colleagues and the broader research community.  Examples:
-    -  https://github.com/arbet003/discoMod
+    - https://uclahs-cds.github.io/package-PrCaMethy/
+    - https://github.com/arbet003/discoMod
 * **Parallel programming** in R using multiple cpus
 
 \faGithub \textbf{ git/github}
