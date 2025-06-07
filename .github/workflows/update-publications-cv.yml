@@ -1,0 +1,50 @@
+name: Weekly CV Update
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 9:00 UTC
+  workflow_dispatch:
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/R
+          key: r-${{ runner.os }}-r-lib-${{ hashFiles('**/*.R', '**/*.Rmd') }}
+          restore-keys: |
+            r-${{ runner.os }}-r-lib-
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
+                                  texlive texlive-latex-extra texlive-fonts-recommended \
+                                  pandoc pandoc-citeproc
+
+      - name: Install R packages
+        run: |
+          Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite"))'
+
+      - name: Run ORCID paper collection script
+        run: Rscript get_orcid_papers.R
+
+      - name: Knit CV
+        run: Rscript -e 'rmarkdown::render("cv.Rmd")'
+
+      - name: Commit and push updated files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add jaron_published_orcid.bib cv.pdf || echo "No changes to commit"
+          git diff --cached --quiet || git commit -m "Automated weekly update of CV and bibliography"
+          git push
