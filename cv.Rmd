@@ -1,6 +1,6 @@
 ---
 name: Jaron
-surname: Arbet
+surname: Arbet, Ph.D.
 position: "Senior Bioinformatician"
 address: "UCLA Jonsson Comprehensive Cancer Center"
 www: jarbet.github.io
