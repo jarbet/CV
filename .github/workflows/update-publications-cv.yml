@@ -36,20 +36,21 @@ jobs:
         with:
           r-version: '4.x' # Explicitly set R version
 
-      # Step 3: Set up TinyTeX (for LaTeX compilation)
-      # This action installs a lightweight LaTeX distribution optimized for R.
-      # Using 'full' scheme to ensure comprehensive LaTeX package installation.
-      - name: Set up TinyTeX
-        uses: r-lib/actions/setup-tinytex@v2
-        with:
-          scheme: full # Install the full TinyTeX scheme for broader LaTeX package support
-
-      # Step 4: Update TinyTeX packages to ensure all dependencies are met
-      # This explicitly forces a full update of the TinyTeX distribution.
-      - name: Update TinyTeX packages
+      # Step 3: Install system dependencies (including a full TeX Live distribution)
+      # This step now installs 'texlive-full' which provides a comprehensive LaTeX environment,
+      # including xelatex, fonts, and common packages.
+      # Also includes other non-LaTeX dependencies for R packages.
+      - name: Install system dependencies and TeX Live
         run: |
-          tlmgr update --all --self
-        shell: bash # Ensure this runs in a bash shell
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
+                                   pandoc \
+                                   texlive-full # Install the full TeX Live distribution
+
+      # Step 4: Rebuild font caches (important for XeLaTeX)
+      # This helps ensure that xelatex can correctly find and use all installed fonts.
+      - name: Rebuild font caches
+        run: sudo fc-cache -fv
 
       # Step 5: Cache R packages
       # This step caches R packages to speed up subsequent workflow runs.
@@ -61,21 +62,13 @@ jobs:
           restore-keys: |
             r-${{ runner.os }}-r-lib- # Fallback restore key
 
-      # Step 6: Install system dependencies (non-LaTeX related)
-      # Pandoc is still needed as it's a separate dependency.
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
-                                   pandoc
-
-      # Step 7: Install R packages
+      # Step 6: Install R packages
       # Install all necessary R packages for your scripts.
       - name: Install R packages
         run: |
           Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid"), repos = "https://cran.r-project.org")'
 
-      # Step 8: Check for required lua filter file
+      # Step 7: Check for required lua filter file
       # The cv.Rmd uses --lua-filter=lua/strong.lua, so this file needs to exist.
       - name: Check for lua/strong.lua
         run: |
@@ -84,7 +77,7 @@ jobs:
             exit 1
           fi
 
-      # Step 9: Run the ORCID paper collection script
+      # Step 8: Run the ORCID paper collection script
       # This script should generate/update jaron_published_orcid.bib.
       # The ORCID_TOKEN secret is passed as an environment variable.
       - name: Run ORCID paper collection script
@@ -92,12 +85,12 @@ jobs:
         env:
           ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }} # Pass the ORCID_TOKEN from GitHub Secrets
 
-      # Step 10: Knit the CV R Markdown file to PDF
+      # Step 9: Knit the CV R Markdown file to PDF
       # This command will compile your R Markdown file into cv.pdf.
       - name: Knit CV
         run: Rscript -e 'rmarkdown::render("cv.Rmd")'
 
-      # Step 11: Commit and push the updated files
+      # Step 10: Commit and push the updated files
       # Using stefanzweifel/git-auto-commit-action for simplicity and robustness.
       # It automatically handles git configuration, adding, committing, and pushing.
       - name: Commit and push updated files
