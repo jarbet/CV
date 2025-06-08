@@ -36,16 +36,23 @@ jobs:
         with:
           r-version: '4.x' # Explicitly set R version
 
-      # Step 3: Install system dependencies (including a full TeX Live distribution)
-      # This step now installs 'texlive-full' which provides a comprehensive LaTeX environment,
-      # including xelatex, fonts, and common packages.
-      # Also includes other non-LaTeX dependencies for R packages.
-      - name: Install system dependencies and TeX Live
+      # Step 3: Install comprehensive system dependencies for LaTeX and R
+      # This step explicitly installs common TeX Live components for robust LaTeX compilation,
+      # including xelatex, necessary fonts, and packages often used by vita::awesomecv.
+      - name: Install system dependencies and TeX Live packages
         run: |
           sudo apt-get update
           sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
                                    pandoc \
-                                   texlive-full # Install the full TeX Live distribution
+                                   texlive-base \
+                                   texlive-latex-recommended \
+                                   texlive-latex-extra \
+                                   texlive-fonts-recommended \
+                                   texlive-fonts-extra \
+                                   texlive-xetex \
+                                   texlive-luatex \
+                                   texlive-bibtex-extra \
+                                   fonts-font-awesome # Explicitly install Font Awesome fonts for LaTeX
 
       # Step 4: Rebuild font caches (important for XeLaTeX)
       # This helps ensure that xelatex can correctly find and use all installed fonts.
