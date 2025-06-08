@@ -19,61 +19,75 @@ permissions:
 # Define a single job named 'build-cv'
 jobs:
   build-cv:
-    # The runner environment for this job
-    runs-on: ubuntu-latest
-    # Run this job inside a Docker container
-    container:
-      # Using the Docker image you provided, which is designed for R/RMarkdown/vitae
-      image: mlampros/mycvitae:rstudiodev
+    # Set the runner environment to Windows
+    runs-on: windows-latest
 
     # Steps in the job
     steps:
       # Step 1: Checkout the repository code
-      # This action brings your repository's code onto the container.
+      # This action brings your repository's code onto the runner.
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Install R packages (within the Docker container)
-      # Even with a specialized Docker image, some packages might not be pre-installed
-      # or you might want the latest versions.
+      # Step 2: Set up R environment
+      # This action sets up R on the runner, making it available for subsequent steps.
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.x' # Explicitly set R version
+
+      # Step 3: Set up TinyTeX (for LaTeX compilation)
+      # This action installs a lightweight LaTeX distribution optimized for R.
+      # It is cross-platform and will install TinyTeX on Windows.
+      - name: Set up TinyTeX
+        uses: r-lib/actions/setup-tinytex@v2
+        with:
+          # Use 'full' scheme for comprehensive LaTeX package support if needed,
+          # though TinyTeX usually installs packages on demand.
+          scheme: full
+
+      # Step 4: Cache R packages
+      # This step caches R packages to speed up subsequent workflow runs.
+      # The path handling is managed by setup-r and actions/cache on Windows.
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.local/share/R # Path where R packages are stored (cross-platform way of referring to user's R library)
+          key: r-${{ runner.os }}-r-lib-${{ hashFiles('**/*.R', '**/*.Rmd') }} # Cache key based on OS and R scripts
+          restore-keys: |
+            r-${{ runner.os }}-r-lib- # Fallback restore key
+
+      # Step 5: Install R packages
+      # Install all necessary R packages for your scripts.
       - name: Install R packages
         run: |
-          # Use check for existence before installing to avoid re-installing
-          # packages that might already be present in the Docker image.
-          # We specify the CRAN repo for consistency.
-          Rscript -e '
-            pkgs <- c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid");
-            install_if_missing <- function(p) {
-              if (!require(p, character.only = TRUE)) {
-                install.packages(p, repos = "https://cran.r-project.org");
-              }
-            };
-            sapply(pkgs, install_if_missing);
-          '
+          Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid"), repos = "https://cran.r-project.org")'
 
-      # Step 3: Check for required lua filter file
+      # Step 6: Check for required lua filter file
       # The cv.Rmd uses --lua-filter=lua/strong.lua, so this file needs to exist in your repo.
+      # Path check works cross-platform.
       - name: Check for lua/strong.lua
         run: |
-          if [ ! -f "lua/strong.lua" ]; then
-            echo "Error: lua/strong.lua not found! This file is referenced in cv.Rmd and is required for compilation."
+          if (-not (Test-Path "lua/strong.lua")) {
+            Write-Error "Error: lua/strong.lua not found! This file is referenced in cv.Rmd and is required for compilation."
             exit 1
-          fi
+          }
+        shell: pwsh # Use PowerShell for Windows commands
 
-      # Step 4: Run the ORCID paper collection script
+      # Step 7: Run the ORCID paper collection script
       # This script should generate/update jaron_published_orcid.bib.
-      # The ORCID_TOKEN secret is passed as an environment variable to the container.
+      # The ORCID_TOKEN secret is passed as an environment variable.
       - name: Run ORCID paper collection script
         run: Rscript get_orcid_papers.R
         env:
           ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }} # Pass the ORCID_TOKEN from GitHub Secrets
 
-      # Step 5: Knit the CV R Markdown file to PDF
+      # Step 8: Knit the CV R Markdown file to PDF
       # This command will compile your R Markdown file into cv.pdf.
       - name: Knit CV
         run: Rscript -e 'rmarkdown::render("cv.Rmd")'
 
-      # Step 6: Commit and push the updated files
+      # Step 9: Commit and push the updated files
       # Using stefanzweifel/git-auto-commit-action for simplicity and robustness.
       # It automatically handles git configuration, adding, committing, and pushing.
       - name: Commit and push updated files
