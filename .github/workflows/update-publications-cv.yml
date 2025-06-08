@@ -57,13 +57,20 @@ jobs:
           restore-keys: |
             r-${{ runner.os }}-r-lib- # Fallback restore key
 
-      # Step 5: Install R packages
+      # Step 5: Install Pandoc
+      # Ensure a recent version of Pandoc is installed using Chocolatey.
+      - name: Install Pandoc
+        run: |
+          choco install pandoc -y
+        shell: powershell # Use PowerShell to run Chocolatey commands
+
+      # Step 6: Install R packages
       # Install all necessary R packages for your scripts.
       - name: Install R packages
         run: |
           Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid"), repos = "https://cran.r-project.org")'
 
-      # Step 6: Check for required lua filter file
+      # Step 7: Check for required lua filter file
       # The cv.Rmd uses --lua-filter=lua/strong.lua, so this file needs to exist in your repo.
       # Path check works cross-platform.
       - name: Check for lua/strong.lua
@@ -74,7 +81,7 @@ jobs:
           }
         shell: pwsh # Use PowerShell for Windows commands
 
-      # Step 7: Run the ORCID paper collection script
+      # Step 8: Run the ORCID paper collection script
       # This script should generate/update jaron_published_orcid.bib.
       # The ORCID_TOKEN secret is passed as an environment variable.
       - name: Run ORCID paper collection script
@@ -82,12 +89,12 @@ jobs:
         env:
           ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }} # Pass the ORCID_TOKEN from GitHub Secrets
 
-      # Step 8: Knit the CV R Markdown file to PDF
+      # Step 9: Knit the CV R Markdown file to PDF
       # This command will compile your R Markdown file into cv.pdf.
       - name: Knit CV
         run: Rscript -e 'rmarkdown::render("cv.Rmd")'
 
-      # Step 9: Commit and push the updated files
+      # Step 10: Commit and push the updated files
       # Using stefanzweifel/git-auto-commit-action for simplicity and robustness.
       # It automatically handles git configuration, adding, committing, and pushing.
       - name: Commit and push updated files
