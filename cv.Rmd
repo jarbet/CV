@@ -242,6 +242,20 @@ tribble(
 tribble(
   ~Year, ~Name, ~Location, ~Notes,
   
+  '2025',
+  'Batch effects: problem and solution',
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentations/2025-05-08_batch_effects_nowhite.pdf}\\newline \\hspace{1cm} \\newline'
+    ),
+  
+  '2025',
+  'p-value histograms',
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentation-pvalue-histograms/}\\newline \\hspace{1cm} \\newline'
+    ),
+  
   '2024',
   'Robust regression for noisy biological data',
   'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
@@ -336,6 +350,12 @@ tribble(
 ```{r}
 tribble(
   ~Year, ~Name, ~Location, ~Notes, ~Type,
+  
+  '2025',
+  'The Landscape of Prostate Tumour Methylation',
+  'UCLA Health Jonsson Comprehensive Cancer Center Annual Symposium, Los Angeles, CA',
+  NULL,
+  'Poster',
   
   '2024',
   'Methylome-Genome Interactions Define Disease Aggression in Localized Prostate Cancer',
