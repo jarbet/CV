@@ -51,12 +51,7 @@ jobs:
           tlmgr update --all --self
         shell: bash # Ensure this runs in a bash shell
 
-      # Step 5: Rebuild font caches for XeLaTeX to find fonts correctly
-      # This is crucial for XeLaTeX to properly recognize and use fonts.
-      - name: Rebuild font caches
-        run: sudo fc-cache -fv
-
-      # Step 6: Cache R packages
+      # Step 5: Cache R packages
       # This step caches R packages to speed up subsequent workflow runs.
       - name: Cache R packages
         uses: actions/cache@v3
@@ -66,7 +61,7 @@ jobs:
           restore-keys: |
             r-${{ runner.os }}-r-lib- # Fallback restore key
 
-      # Step 7: Install system dependencies (non-LaTeX related)
+      # Step 6: Install system dependencies (non-LaTeX related)
       # Pandoc is still needed as it's a separate dependency.
       - name: Install system dependencies
         run: |
@@ -74,13 +69,13 @@ jobs:
           sudo apt-get install -y libcurl4-openssl-dev libxml2-dev libssl-dev \
                                    pandoc
 
-      # Step 8: Install R packages
+      # Step 7: Install R packages
       # Install all necessary R packages for your scripts.
       - name: Install R packages
         run: |
           Rscript -e 'install.packages(c("vitae", "tibble", "RefManageR", "rmarkdown", "knitr", "httr", "jsonlite", "rorcid"), repos = "https://cran.r-project.org")'
 
-      # Step 9: Check for required lua filter file
+      # Step 8: Check for required lua filter file
       # The cv.Rmd uses --lua-filter=lua/strong.lua, so this file needs to exist.
       - name: Check for lua/strong.lua
         run: |
@@ -89,7 +84,7 @@ jobs:
             exit 1
           fi
 
-      # Step 10: Run the ORCID paper collection script
+      # Step 9: Run the ORCID paper collection script
       # This script should generate/update jaron_published_orcid.bib.
       # The ORCID_TOKEN secret is passed as an environment variable.
       - name: Run ORCID paper collection script
@@ -97,12 +92,12 @@ jobs:
         env:
           ORCID_TOKEN: ${{ secrets.ORCID_TOKEN }} # Pass the ORCID_TOKEN from GitHub Secrets
 
-      # Step 11: Knit the CV R Markdown file to PDF
+      # Step 10: Knit the CV R Markdown file to PDF
       # This command will compile your R Markdown file into cv.pdf.
       - name: Knit CV
         run: Rscript -e 'rmarkdown::render("cv.Rmd")'
 
-      # Step 12: Commit and push the updated files
+      # Step 11: Commit and push the updated files
       # Using stefanzweifel/git-auto-commit-action for simplicity and robustness.
       # It automatically handles git configuration, adding, committing, and pushing.
       - name: Commit and push updated files
