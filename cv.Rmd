@@ -239,8 +239,6 @@ tribble(
 
 ## \faSquare \ \ \text{Departmental}
 ```{r}
-#bibliography_entries("Presentations_departmental.bib")
-
 tribble(
   ~Year, ~Name, ~Location, ~Notes,
   
@@ -336,8 +334,6 @@ tribble(
 ## \faSquare \ \ \text{Conferences}
 
 ```{r}
-# bibliography_entries("Presentations_conferences.bib")
-
 tribble(
   ~Year, ~Name, ~Location, ~Notes, ~Type,
   
