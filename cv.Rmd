@@ -11,7 +11,7 @@ github: jarbet
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
 csl: apa-cv.csl # change this if you want to use other citation styles
-output: 
+output:
   vitae::awesomecv:
     keep_tex: true
     pandoc_args: ["--lua-filter=lua/strong.lua"]
@@ -24,7 +24,8 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-library(vitae);library(tibble)
+library(vitae);
+library(tibble)
 library(RefManageR);
 #rmarkdown::pandoc_version()
 ```
@@ -69,7 +70,7 @@ tribble(
        'Clinical study reports for federal regulatory agencies',
        'Perform analyses with large national database (STS/ACC TVT Registry) including propensity score matching for causal inference\\newline \\hspace{1cm} \\newline'
         ),
-  
+
   'Aug 2018 - Jan 2021',
   'Postdoctoral Research Associate',
   'University of Colorado Anschutz Medical Campus, Department of Biostatistics and Informatics, Aurora, CO',
@@ -81,21 +82,21 @@ tribble(
        'Taught BIOS 6601 Intro stats course for 75 MPH students, and created annual 6-week data science machine learning short course',
        'Develop new statistical methodology\\newline \\hspace{1cm} \\newline'
         ),
-  
+
   'June 2014 - July 2018',
   'Research Assistant',
   'University of Minnesota, Division of Biostatistics, Minneapolis, MN',
    list(
        'Developed variable selection methods for high dimensional genetic data and robust methods for estimating the genetic heritability of disease traits\\newline \\hspace{1cm} \\newline'
     ),
-  
+
   'June - Aug 2013',
   'Statistical Genetics Research Intern',
   'Dordt College, Department of Mathematics, Sioux Center, IA ',
    list(
        'Developed methods for aggregating different statistical tests together for greater sensitivity in detecting disease-related genes; resampling-based bias corrected tests\\newline \\hspace{1cm} \\newline'
     ),
-  
+
   'Sept 2012 - May 2014',
   'Math and Statistics Tutor',
   'Winona State University, Winona, MN',
@@ -124,7 +125,7 @@ tribble(
   "2014-2018",
   "University of Minnesota",
   "Minneapolis, MN, USA",
-  
+
   "B.S. Mathematics and Statistics",
   "GPA: 4.0 | \\textit{Summa Cum Laude}",
   "2010-2014",
@@ -141,12 +142,19 @@ tribble(
   )
 ```
 
+# \faBook \text{ Manscripts submitted for review}
+
+```{r}
+bibliography_entries("submitted.bib")
+```
+
 
 # \faBook \text{ Peer-reviewed Publications}
 
 ```{r}
 bibliography_entries("jaron_published_orcid.bib")
 ```
+
 
 # \faAward \text{ Awards}
 
@@ -165,7 +173,7 @@ tribble(
   'UCLA Jonsson Comprehensive Cancer Center',
    NA,
    NA,
- 
+
   '2022-2023',
   'Staff appreciation and recognition (STAR)',
   'UCLA Jonsson Comprehensive Cancer Center',
@@ -196,7 +204,7 @@ tribble(
   'University of Minnesota, Division of Biostatistics & Health Data Science',
    NA,
    NA,
- 
+
   '2015-2017',
   'Interdisciplinary Biostatistics Training Grant in Genetics and Genomics',
   'National Institute of General Medical Sciences',
@@ -209,7 +217,7 @@ tribble(
     what = Institution,
     why = Supp,
     when = Amount
-  ) 
+  )
 ```
 
 ## \faSquare \ \ \text{Competitions}
@@ -219,50 +227,82 @@ tribble(
 tribble(
   ~Year, ~Name, ~Institution, ~Supp, ~Amount,
   '2014', 'Midwest Undergraduate Data Analysis Competition (MUDAC)', 'School of Education, University of Michigan', '3\\textsuperscript{rd} place out of 20 teams from 14 universities\\newline \\hspace{1cm} \\newline', NA,
-  
+
   '2014', '1st place in the “predictive-modeling class competition”', 'Winona State University Data Mining Course', NA, NA,
-  
+
   '2013', 'Midwest Undergraduate Data Analysis Competition (MUDAC)', 'School of Education, University of Michigan', '2\\textsuperscript{nd} place out of 15 teams from 10 universities\\newline \\hspace{1cm} \\newline', NA,
-) %>% 
+) %>%
   detailed_entries(
     where = Year,
-    with = Name, 
+    with = Name,
     what = Institution,
     why = Supp,
     when = Amount,
     .protect = FALSE
-  ) 
+  )
 ```
 
 
 # \faChartBar \text{ Presentations}
 
+## \faSquare \ \ \text{Invited Guest Speaker}
+
+```{r}
+tribble(
+  ~Year, ~Name, ~Location, ~Notes,
+
+ '2025',
+ 'The Landscape of Prostate Tumour Methylation',
+  'Prostate Cancer Foundation Precision Medicine Working Group, Virtual Meeting',
+  list(
+      '\\url{https://www.biorxiv.org/content/10.1101/2025.02.07.637178v3}\\newline \\hspace{1cm} \\newline'
+    )
+
+) %>%
+  detailed_entries(
+    with = Name,
+    what = Location,
+    why = Notes,
+    when = Year,
+    .protect = FALSE
+    )
+```
+
+
+
 ## \faSquare \ \ \text{Departmental}
 ```{r}
 tribble(
   ~Year, ~Name, ~Location, ~Notes,
-  
+
+  '2025',
+  'Mendelian Randomization Causal inference in Observational Studies',
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
+  list(
+      '\\url{https://jarbet.github.io/presentation-mendelian-randomization/}\\newline \\hspace{1cm} \\newline'
+    ),
+
   '2025',
   'Batch effects: problem and solution',
   'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
   list(
       '\\url{https://jarbet.github.io/presentations/2025-05-08_batch_effects_nowhite.pdf}\\newline \\hspace{1cm} \\newline'
     ),
-  
+
   '2025',
   'p-value histograms',
   'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
   list(
       '\\url{https://jarbet.github.io/presentation-pvalue-histograms/}\\newline \\hspace{1cm} \\newline'
     ),
-  
+
   '2024',
   'Robust regression for noisy biological data',
   'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
   list(
       '\\url{https://jarbet.github.io/presentation-ordinal-regression/ordinal_regression.html}\\newline \\hspace{1cm} \\newline'
     ),
- 
+
   '2024',
   'Linear regression diagnostics',
   'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
@@ -290,54 +330,54 @@ tribble(
   list(
       '\\url{https://jarbet.github.io/presentations/2022-08-25_Bayesian_stats.pdf}\\newline \\hspace{1cm} \\newline'
         ),
-  
+
   '2021',
   'Multiomics cancer data analysis',
   'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
   list(
       '\\url{https://jarbet.github.io/presentations/2021-11-21_multiomics_cancer.pdf}\\newline \\hspace{1cm} \\newline'
         ),
- 
+
  '2021',
   'Interpretable machine learning',
   'Center for Innovative Design and Analysis, University of Colorado, Denver, CO',
   list(
       '\\url{https://jarbet.github.io/presentations/2020-01-21_interpretable_machine_learning.pdf}\\newline \\hspace{1cm} \\newline'
         ),
- 
+
  '2021',
   'Differential Network Analysis of Gene Modules',
   'Systems Genetics and Bioinformatics Research Lab, University of Colorado, Denver, CO',
   NULL,
- 
+
  '2018',
  'Frequentist versus Bayesian Approaches to Statistics: A Debate',
   'Department of Biostatistics and Informatics, University of Colorado, Denver, CO',
   NULL,
- 
+
  '2017',
  'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies',
   'University of Minnesota Biostatistics Student Seminar Series, Minneapolis, MN',
   NULL,
- 
+
  '2016',
  'A General framework for Association Tests with Multivariate Traits in Large-Scale Genomics Studies',
   'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN',
   NULL,
- 
+
   '2016',
  'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies',
   'School of Public Health Research Day, University of Minnesota, Minneapolis, MN',
   NULL,
- 
+
  '2016',
  'Penalized Regression for High-Dimensional Genetic Association Testing',
   'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN',
   NULL
-) %>% 
+) %>%
   detailed_entries(
     with = Name,
-    what = Location, 
+    what = Location,
     why = Notes,
     when = Year,
     .protect = FALSE
@@ -350,19 +390,19 @@ tribble(
 ```{r}
 tribble(
   ~Year, ~Name, ~Location, ~Notes, ~Type,
-  
+
   '2025',
   'The Landscape of Prostate Tumour Methylation',
   'UCLA Health Jonsson Comprehensive Cancer Center Annual Symposium, Los Angeles, CA',
   NULL,
   'Poster',
-  
+
   '2024',
   'Methylome-Genome Interactions Define Disease Aggression in Localized Prostate Cancer',
   'RECOMB/ISCB Conference on Regulatory and Systems Genomics, Los Angeles, CA',
   NULL,
   'Poster',
-  
+
   '2022',
   'Triplet matching: propensity score matching with 3 groups',
   '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)',
@@ -370,41 +410,41 @@ tribble(
       '\\url{https://jarbet.github.io/presentations/20220422_triplet_matching.pdf}\\newline \\hspace{1cm} \\newline'
         ),
   'Talk',
-  
+
   '2022',
   'Statistical Considerations and Methods to Utilize Real World Evidence in Medical Device Evaluation',
   '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)',
   NULL,
   'Panel Co-organizer',
-  
+
   '2017',
   'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies using Generalized Estimating Equations',
   'Joint Statistical Meetings (JSM), Baltimore, MD',
   NULL,
   'Poster',
-  
+
   '2016',
   'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies',
   'Eastern North American Region International Biometric Society (ENAR), Austin, TX',
   NULL,
   'Poster',
-  
+
   '2013',
   'What now? Post-Hoc Approaches for Gene-based Rare-Variant Tests of Association',
   'American Society of Human Genetics Conference (ASHG), Boston, MA',
   NULL,
   'Poster',
-  
+
   '2013',
   'General Approaches for Combining Rare Variant Association Tests Provide Improved Power Across a Wide Range of Genetic Architectures',
   'American Society of Human Genetics Conference (ASHG), Boston, MA',
   NULL,
   'Poster'
-  
-) %>% 
+
+) %>%
   detailed_entries(
     with = Name,
-    what = Location, 
+    what = Location,
     why = Notes,
     when = Year,
     where = Type,
@@ -457,7 +497,7 @@ tribble(
        "\\textbf{\\textit{Description}}: 6-week short course (2 hours/week) on data science with emphasis on how machine learning and data mining are used in biomedical research.  Topics included: 1) Overview of Data Science; 2) Introduction of Machine Learning in Biomedical Research; 3) Clustering and Pattern Finding (unsupervised Machine Learning); 4) Powerful Predictive Models and Variable Selection (supervised Machine Learning); 5) Fundamentals of Data Visualization; 6): Reproducible Research and Team Science",
     "\\textbf{\\textit{Audience}}: ~20 medical researchers, mostly non-statisticians\\newline \\hspace{1cm} \\newline"
     ),
-  
+
   'Summer 2019, 2020',
   "Introduction to Statistics",
   "University of Colorado Anschutz Medical Campus",
@@ -491,7 +531,7 @@ tribble(
        "\\textbf{\\textit{Primary Instructor}}: Dr. Celine Marie Claire D. Vetter, Integrative Physiology",
        "\\textbf{\\textit{Lecture}}: Machine Learning in Biomedical Research\\newline \\hspace{1cm} \\newline"
     ),
-  
+
   'Fall 2018',
   "BIOS 6611 – Biostatistical Methods I",
   "University of Colorado School of Public Health",
