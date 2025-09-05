@@ -549,6 +549,7 @@ tribble(
       )
 ```
 
+\newpage
 
 # \faUsers \text{ Mentoring and supervising}
 
@@ -592,6 +593,10 @@ tribble(
 
 ## \faSquare \ \ \text{Committees/Other}
 
+### Jonsson Comprehensive Cancer Center, University of California Los Angeles {-}
+
+- Chair of Statistics Working Group: April 2023 - Present
+
 ### Department of Biostatistics and Informatics, University of Colorado {-}
 
 - Student Admissions Committee, Fall 2018 – Spring 2019
@@ -601,6 +606,7 @@ tribble(
 
 - Education Committee, Fall 2018 – Jan 2020
 
+\newpage
 
 # \faDesktop \text{ Software Skills}
 
@@ -617,7 +623,7 @@ tribble(
 \faGithub \textbf{ git/github}
 
 * Version control
-* Used daily at UCLA
+* Used daily
 * Collaborating with others on projects
 * Review colleagues' code
 * Assign issues to team members
