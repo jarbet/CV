@@ -1,8 +1,8 @@
 ---
 name: Jaron
 surname: Arbet, Ph.D.
-position: "Senior Bioinformatician"
-address: "UCLA Jonsson Comprehensive Cancer Center"
+position: "Assistant Research Professor - Biostatistician"
+address: "City of Hope - Beckman Research Institute - Department of Population Sciences"
 www: jarbet.github.io
 email: "jaron.arbet@gmail.com"
 #to get the orcid: 0000-0001-6087-0428
@@ -47,7 +47,15 @@ tribble(
   ~ Name,
   ~ Institution,
   ~ Notes,
-  'April 2022 - Present',
+  'Dec 2025 - Present',
+  'Assistant Research Professor - Biostatistician',
+  'City of Hope - Beckman Research Institute - Department of Population Sciences, Duarte, CA',
+  list(
+       'Studying the impact of exercise on risk of cancer diagnosis, and for improving health outcomes in cancer patients.',
+       'Analysis of cancer molecular data: whole genome sequencing, RNA-Seq, DNA methylation, proteomics.\\newline \\hspace{1cm} \\newline'
+        ),
+
+  'April 2022 - Nov 2025',
   'Senior Bioinformatician',
   'Jonsson Comprehensive Cancer Center, University of California Los Angeles, CA',
   list(
@@ -110,6 +118,8 @@ tribble(
     .protect = FALSE
   )
 ```
+
+\newpage
 
 # \faGraduationCap \text{ Education}
 
