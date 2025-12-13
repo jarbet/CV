@@ -21,6 +21,24 @@ header-includes:
   - \usepackage{fontawesome5}
 ---
 
+\makeatletter
+\renewenvironment{cventries}{%
+  % Remove the original \vspace{\acvSectionContentTopSkip} for tight spacing
+  % Define a list environment for clean indentation
+  \list{}{%
+    \setlength{\leftmargin}{5.5mm} % Your desired left indent
+    \setlength{\rightmargin}{0pt} % Optional: Add a right margin here if needed
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\itemsep}{0pt}
+    \setlength{\itemindent}{0pt}
+  }
+  \item\relax % Start the first item
+}{%
+  \endlist
+}
+\makeatother
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
@@ -139,7 +157,7 @@ tribble(
   "B.S. Mathematics and Statistics",
   "GPA: 4.0 | \\textit{Summa Cum Laude}",
   "2010-2014",
-  "Wiona State University",
+  "Winona State University",
   "Winona, MN, USA"
 ) %>%
   detailed_entries(
