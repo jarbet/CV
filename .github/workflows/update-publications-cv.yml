@@ -14,7 +14,8 @@ on:
 # Permissions granted to the workflow job
 # 'contents: write' is crucial for the action to be able to commit and push files back to the repo.
 permissions:
-  contents: write # This line is essential for git push to work
+  contents: write
+  pull-requests: write
 
 # Define a single job named 'build-cv'
 jobs:
