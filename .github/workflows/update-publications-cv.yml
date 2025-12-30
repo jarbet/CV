@@ -22,8 +22,8 @@ permissions:
 # Define a single job named 'build-cv'
 jobs:
   build-cv:
-    # Set the runner environment to macOS
-    runs-on: macos-latest
+    # Set the runner environment to Ubuntu
+    runs-on: ubuntu-latest
 
     # Steps in the job
     steps:
@@ -31,6 +31,14 @@ jobs:
       # This action brings your repository's code onto the runner.
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Step 1.1: Install system dependencies on the Ubuntu runner
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libssl-dev libcurl4-openssl-dev libxml2-dev
+        shell: bash
 
       # Step 2: Set up R environment
       # This action sets up R on the runner, making it available for subsequent steps.
@@ -66,20 +74,6 @@ jobs:
         # Optional: pin a specific pandoc version:
         # with:
         #   version: '3.1.5'
-
-
-      - name: Install gettext (provides libintl.h)
-        run: |
-          brew update
-          brew install gettext
-          brew link --force gettext
-
-      - name: Export build flags for gettext
-        run: |
-          PREFIX="$(brew --prefix gettext)"
-          echo "CPPFLAGS=-I${PREFIX}/include" >> $GITHUB_ENV
-          echo "LDFLAGS=-L${PREFIX}/lib" >> $GITHUB_ENV
-          echo "PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig" >> $GITHUB_ENV
 
 
       # Step 6: Install R packages (use renv)
