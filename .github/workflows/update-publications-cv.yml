@@ -67,16 +67,20 @@ jobs:
         # with:
         #   version: '3.1.5'
 
-      # Install gettext so libintl.h is available for compiling packages (data.table)
-      - name: Install gettext (Homebrew) and export flags
+
+      - name: Install gettext (provides libintl.h)
         run: |
+          brew update
           brew install gettext
+          brew link --force gettext
+
+      - name: Export build flags for gettext
+        run: |
           PREFIX="$(brew --prefix gettext)"
-          echo "PATH=${PREFIX}/bin:$PATH" >> $GITHUB_ENV
-          echo "LDFLAGS=-L${PREFIX}/lib" >> $GITHUB_ENV
           echo "CPPFLAGS=-I${PREFIX}/include" >> $GITHUB_ENV
+          echo "LDFLAGS=-L${PREFIX}/lib" >> $GITHUB_ENV
           echo "PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig" >> $GITHUB_ENV
-        shell: bash
+
 
       # Step 6: Install R packages (use renv)
       # Install all necessary R packages for your scripts.
