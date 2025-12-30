@@ -7,7 +7,9 @@ on:
   # Your chosen cron expression: Every Monday at 9:00 UTC
   schedule:
     - cron: '0 9 * * 1'
-
+  push:
+    branches: [main, master]
+  pull_request:
   # Allows you to run this workflow manually from the Actions tab in GitHub
   workflow_dispatch:
 
@@ -20,8 +22,8 @@ permissions:
 # Define a single job named 'build-cv'
 jobs:
   build-cv:
-    # Set the runner environment to macOS
-    runs-on: macos-latest
+    # Set the runner environment to Ubuntu
+    runs-on: ubuntu-latest
 
     # Steps in the job
     steps:
@@ -29,6 +31,14 @@ jobs:
       # This action brings your repository's code onto the runner.
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Step 1.1: Install system dependencies on the Ubuntu runner
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libssl-dev libcurl4-openssl-dev libxml2-dev
+        shell: bash
 
       # Step 2: Set up R environment
       # This action sets up R on the runner, making it available for subsequent steps.
@@ -64,6 +74,7 @@ jobs:
         # Optional: pin a specific pandoc version:
         # with:
         #   version: '3.1.5'
+
 
       # Step 6: Install R packages (use renv)
       # Install all necessary R packages for your scripts.
