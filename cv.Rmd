@@ -42,9 +42,9 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-library(vitae);
+library(vitae)
 library(tibble)
-library(RefManageR);
+library(RefManageR)
 #rmarkdown::pandoc_version()
 ```
 
@@ -61,72 +61,44 @@ library(RefManageR);
 
 ```{r}
 tribble(
-  ~ Year,
-  ~ Name,
-  ~ Institution,
-  ~ Notes,
-  'Dec 2025 - Present',
-  'Assistant Research Professor - Biostatistician',
-  'City of Hope - Beckman Research Institute - Department of Population Sciences, Duarte, CA',
-  list(
-       'Studying the impact of exercise on risk of cancer diagnosis, and for improving health outcomes in cancer patients.',
-       'Analysis of cancer molecular data: whole genome sequencing, RNA-Seq, DNA methylation, proteomics.\\newline \\hspace{1cm} \\newline'
-        ),
+  ~Year                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ,
+  ~Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ,
+  ~Institution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ,
+  ~Notes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  'Dec 2025 - Present'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ,
+  'Assistant Research Professor - Biostatistician'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ,
+  'City of Hope - Beckman Research Institute - Department of Population Sciences, Duarte, CA'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ,
+  list('Studying the impact of exercise on risk of cancer diagnosis, and for improving health outcomes in cancer patients.', 'Analysis of cancer molecular data: whole genome sequencing, RNA-Seq, DNA methylation, proteomics.\\newline \\hspace{1cm} \\newline')                                                                                                                                                                                                                                                                                                                                                                                                                                 ,
 
-  'April 2022 - Nov 2025',
-  'Senior Bioinformatician',
-  'Jonsson Comprehensive Cancer Center, University of California Los Angeles, CA',
-  list(
-       'Analysis of cancer molecular data: whole genome sequencing, RNA-Seq, DNA methylation, proteomics',
-       'Biomarker identification: among thousands of molecular features, which are most associated with cancer outcomes?',
-       'Daily git/github use for version control and collaboration',
-       'Supervised machine learning for predicting cancer prognosis',
-       'Unsupervised machine learning for deriving cancer subtypes',
-       'Supervising undegraduate and graduate students on projects',
-       'Develop open-source R packages for sharing software with broader scientific community',
-       'Create statistical analysis plans and power/sample size estimation for grants\\newline \\hspace{1cm} \\newline'
-        ),
+  'April 2022 - Nov 2025'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ,
+  'Senior Bioinformatician'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ,
+  'Jonsson Comprehensive Cancer Center, University of California Los Angeles, CA'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ,
+  list('Analysis of cancer molecular data: whole genome sequencing, RNA-Seq, DNA methylation, proteomics', 'Biomarker identification: among thousands of molecular features, which are most associated with cancer outcomes?', 'Daily git/github use for version control and collaboration', 'Supervised machine learning for predicting cancer prognosis', 'Unsupervised machine learning for deriving cancer subtypes', 'Supervising undegraduate and graduate students on projects', 'Develop open-source R packages for sharing software with broader scientific community', 'Create statistical analysis plans and power/sample size estimation for grants\\newline \\hspace{1cm} \\newline') ,
 
-  'Jan 2021 - April 2022',
-  'Staff Biostatistician',
-  'Edwards Lifesciences, Irvine, CA',
-   list(
-       'Develop statistical analysis plans and data monitoring for clinical trials',
-       'Power and sample size estimation',
-       'Clinical study reports for federal regulatory agencies',
-       'Perform analyses with large national database (STS/ACC TVT Registry) including propensity score matching for causal inference\\newline \\hspace{1cm} \\newline'
-        ),
+  'Jan 2021 - April 2022'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ,
+  'Staff Biostatistician'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ,
+  'Edwards Lifesciences, Irvine, CA'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ,
+  list('Develop statistical analysis plans and data monitoring for clinical trials', 'Power and sample size estimation', 'Clinical study reports for federal regulatory agencies', 'Perform analyses with large national database (STS/ACC TVT Registry) including propensity score matching for causal inference\\newline \\hspace{1cm} \\newline')                                                                                                                                                                                                                                                                                                                                               ,
 
-  'Aug 2018 - Jan 2021',
-  'Postdoctoral Research Associate',
-  'University of Colorado Anschutz Medical Campus, Department of Biostatistics and Informatics, Aurora, CO',
-   list(
-       'Provided statistical consulting services',
-       'Published scientific manuscripts',
-       'Developed grants (statistical analysis plan, power/sample size estimation)',
-       'Supervised students and MS/MPH degree biostatisticians',
-       'Taught BIOS 6601 Intro stats course for 75 MPH students, and created annual 6-week data science machine learning short course',
-       'Develop new statistical methodology\\newline \\hspace{1cm} \\newline'
-        ),
+  'Aug 2018 - Jan 2021'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ,
+  'Postdoctoral Research Associate'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ,
+  'University of Colorado Anschutz Medical Campus, Department of Biostatistics and Informatics, Aurora, CO'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ,
+  list('Provided statistical consulting services', 'Published scientific manuscripts', 'Developed grants (statistical analysis plan, power/sample size estimation)', 'Supervised students and MS/MPH degree biostatisticians', 'Taught BIOS 6601 Intro stats course for 75 MPH students, and created annual 6-week data science machine learning short course', 'Develop new statistical methodology\\newline \\hspace{1cm} \\newline')                                                                                                                                                                                                                                                            ,
 
-  'June 2014 - July 2018',
-  'Research Assistant',
-  'University of Minnesota, Division of Biostatistics, Minneapolis, MN',
-   list(
-       'Developed variable selection methods for high dimensional genetic data and robust methods for estimating the genetic heritability of disease traits\\newline \\hspace{1cm} \\newline'
-    ),
+  'June 2014 - July 2018'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ,
+  'Research Assistant'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ,
+  'University of Minnesota, Division of Biostatistics, Minneapolis, MN'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ,
+  list('Developed variable selection methods for high dimensional genetic data and robust methods for estimating the genetic heritability of disease traits\\newline \\hspace{1cm} \\newline')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ,
 
-  'June - Aug 2013',
-  'Statistical Genetics Research Intern',
-  'Dordt College, Department of Mathematics, Sioux Center, IA ',
-   list(
-       'Developed methods for aggregating different statistical tests together for greater sensitivity in detecting disease-related genes; resampling-based bias corrected tests\\newline \\hspace{1cm} \\newline'
-    ),
+  'June - Aug 2013'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ,
+  'Statistical Genetics Research Intern'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  'Dordt College, Department of Mathematics, Sioux Center, IA '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+  list('Developed methods for aggregating different statistical tests together for greater sensitivity in detecting disease-related genes; resampling-based bias corrected tests\\newline \\hspace{1cm} \\newline')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ,
 
-  'Sept 2012 - May 2014',
-  'Math and Statistics Tutor',
-  'Winona State University, Winona, MN',
-   NULL
+  'Sept 2012 - May 2014'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  'Math and Statistics Tutor'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ,
+  'Winona State University, Winona, MN'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ,
+  NULL
 ) %>%
   detailed_entries(
     where = Year,
@@ -143,21 +115,21 @@ tribble(
 
 ```{r}
 tribble(
-  ~ Degree,
-  ~ Advisor,
-  ~ Year,
-  ~ Institution,
-  ~ Where,
-  "PhD Biostatistics",
-  "GPA: 3.7\\newline \\hspace{1cm} \\newline",
-  "2014-2018",
-  "University of Minnesota",
-  "Minneapolis, MN, USA",
+  ~Degree                                     ,
+  ~Advisor                                    ,
+  ~Year                                       ,
+  ~Institution                                ,
+  ~Where                                      ,
+  "PhD Biostatistics"                         ,
+  "GPA: 3.7\\newline \\hspace{1cm} \\newline" ,
+  "2014-2018"                                 ,
+  "University of Minnesota"                   ,
+  "Minneapolis, MN, USA"                      ,
 
-  "B.S. Mathematics and Statistics",
-  "GPA: 4.0 | \\textit{Summa Cum Laude}",
-  "2010-2014",
-  "Winona State University",
+  "B.S. Mathematics and Statistics"           ,
+  "GPA: 4.0 | \\textit{Summa Cum Laude}"      ,
+  "2010-2014"                                 ,
+  "Winona State University"                   ,
   "Winona, MN, USA"
 ) %>%
   detailed_entries(
@@ -191,22 +163,22 @@ bibliography_entries("jaron_published_orcid.bib")
 
 ```{r}
 tribble(
-  ~ Year,
-  ~ Name,
-  ~ Institution,
-  ~ Supp,
-  ~ Amount,
-  '2023-2024',
-  'Staff appreciation and recognition (STAR)',
-  'UCLA Jonsson Comprehensive Cancer Center',
-   NA,
-   NA,
+  ~Year                                       ,
+  ~Name                                       ,
+  ~Institution                                ,
+  ~Supp                                       ,
+  ~Amount                                     ,
+  '2023-2024'                                 ,
+  'Staff appreciation and recognition (STAR)' ,
+  'UCLA Jonsson Comprehensive Cancer Center'  ,
+  NA                                          ,
+  NA                                          ,
 
-  '2022-2023',
-  'Staff appreciation and recognition (STAR)',
-  'UCLA Jonsson Comprehensive Cancer Center',
-   NA,
-   NA,
+  '2022-2023'                                 ,
+  'Staff appreciation and recognition (STAR)' ,
+  'UCLA Jonsson Comprehensive Cancer Center'  ,
+  NA                                          ,
+  NA                                          ,
 ) %>%
   detailed_entries(
     where = Year,
@@ -222,22 +194,22 @@ tribble(
 
 ```{r}
 tribble(
-  ~ Year,
-  ~ Name,
-  ~ Institution,
-  ~ Supp,
-  ~ Amount,
-  '2017-2018',
-  'Outstanding Research Assistant Award',
-  'University of Minnesota, Division of Biostatistics & Health Data Science',
-   NA,
-   NA,
+  ~Year                                                                      ,
+  ~Name                                                                      ,
+  ~Institution                                                               ,
+  ~Supp                                                                      ,
+  ~Amount                                                                    ,
+  '2017-2018'                                                                ,
+  'Outstanding Research Assistant Award'                                     ,
+  'University of Minnesota, Division of Biostatistics & Health Data Science' ,
+  NA                                                                         ,
+  NA                                                                         ,
 
-  '2015-2017',
-  'Interdisciplinary Biostatistics Training Grant in Genetics and Genomics',
-  'National Institute of General Medical Sciences',
-   NA,
-   NA,
+  '2015-2017'                                                                ,
+  'Interdisciplinary Biostatistics Training Grant in Genetics and Genomics'  ,
+  'National Institute of General Medical Sciences'                           ,
+  NA                                                                         ,
+  NA                                                                         ,
 ) %>%
   detailed_entries(
     where = Year,
@@ -253,12 +225,12 @@ tribble(
 
 ```{r}
 tribble(
-  ~Year, ~Name, ~Institution, ~Supp, ~Amount,
-  '2014', 'Midwest Undergraduate Data Analysis Competition (MUDAC)', 'School of Education, University of Michigan', '3\\textsuperscript{rd} place out of 20 teams from 14 universities\\newline \\hspace{1cm} \\newline', NA,
+  ~Year  , ~Name                                                      , ~Institution                                  , ~Supp                                                                                                , ~Amount ,
+  '2014' , 'Midwest Undergraduate Data Analysis Competition (MUDAC)'  , 'School of Education, University of Michigan' , '3\\textsuperscript{rd} place out of 20 teams from 14 universities\\newline \\hspace{1cm} \\newline' , NA      ,
 
-  '2014', '1st place in the “predictive-modeling class competition”', 'Winona State University Data Mining Course', NA, NA,
+  '2014' , '1st place in the “predictive-modeling class competition”' , 'Winona State University Data Mining Course'  , NA                                                                                                   , NA      ,
 
-  '2013', 'Midwest Undergraduate Data Analysis Competition (MUDAC)', 'School of Education, University of Michigan', '2\\textsuperscript{nd} place out of 15 teams from 10 universities\\newline \\hspace{1cm} \\newline', NA,
+  '2013' , 'Midwest Undergraduate Data Analysis Competition (MUDAC)'  , 'School of Education, University of Michigan' , '2\\textsuperscript{nd} place out of 15 teams from 10 universities\\newline \\hspace{1cm} \\newline' , NA      ,
 ) %>%
   detailed_entries(
     where = Year,
@@ -277,15 +249,12 @@ tribble(
 
 ```{r}
 tribble(
-  ~Year, ~Name, ~Location, ~Notes,
+  ~Year                                                                                                       , ~Name , ~Location , ~Notes ,
 
- '2025',
- 'The Landscape of Prostate Tumour Methylation',
-  'Prostate Cancer Foundation Precision Medicine Working Group, Virtual Meeting',
-  list(
-      '\\url{https://www.biorxiv.org/content/10.1101/2025.02.07.637178v3}\\newline \\hspace{1cm} \\newline'
-    )
-
+  '2025'                                                                                                      ,
+  'The Landscape of Prostate Tumour Methylation'                                                              ,
+  'Prostate Cancer Foundation Precision Medicine Working Group, Virtual Meeting'                              ,
+  list('\\url{https://www.biorxiv.org/content/10.1101/2025.02.07.637178v3}\\newline \\hspace{1cm} \\newline')
 ) %>%
   detailed_entries(
     with = Name,
@@ -293,7 +262,7 @@ tribble(
     why = Notes,
     when = Year,
     .protect = FALSE
-    )
+  )
 ```
 
 
@@ -301,106 +270,86 @@ tribble(
 ## \faSquare \ \ \text{Departmental}
 ```{r}
 tribble(
-  ~Year, ~Name, ~Location, ~Notes,
+  ~Year                                                                                                                                          , ~Name , ~Location , ~Notes ,
 
-  '2025',
-  'Mendelian Randomization Causal inference in Observational Studies',
-  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentation-mendelian-randomization/}\\newline \\hspace{1cm} \\newline'
-    ),
+  '2025'                                                                                                                                         ,
+  'Mendelian Randomization Causal inference in Observational Studies'                                                                            ,
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA'                                                    ,
+  list('\\url{https://jarbet.github.io/presentation-mendelian-randomization/}\\newline \\hspace{1cm} \\newline')                                 ,
 
-  '2025',
-  'Batch effects: problem and solution',
-  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentations/2025-05-08_batch_effects_nowhite.pdf}\\newline \\hspace{1cm} \\newline'
-    ),
+  '2025'                                                                                                                                         ,
+  'Batch effects: problem and solution'                                                                                                          ,
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA'                                                                 ,
+  list('\\url{https://jarbet.github.io/presentations/2025-05-08_batch_effects_nowhite.pdf}\\newline \\hspace{1cm} \\newline')                    ,
 
-  '2025',
-  'p-value histograms',
-  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentation-pvalue-histograms/}\\newline \\hspace{1cm} \\newline'
-    ),
+  '2025'                                                                                                                                         ,
+  'p-value histograms'                                                                                                                           ,
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA'                                                                 ,
+  list('\\url{https://jarbet.github.io/presentation-pvalue-histograms/}\\newline \\hspace{1cm} \\newline')                                       ,
 
-  '2024',
-  'Robust regression for noisy biological data',
-  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentation-ordinal-regression/ordinal_regression.html}\\newline \\hspace{1cm} \\newline'
-    ),
+  '2024'                                                                                                                                         ,
+  'Robust regression for noisy biological data'                                                                                                  ,
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA'                                                    ,
+  list('\\url{https://jarbet.github.io/presentation-ordinal-regression/ordinal_regression.html}\\newline \\hspace{1cm} \\newline')               ,
 
-  '2024',
-  'Linear regression diagnostics',
-  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentation-regression-diagnostics/regression_diagnostics.html}\\newline \\hspace{1cm} \\newline'
-    ),
+  '2024'                                                                                                                                         ,
+  'Linear regression diagnostics'                                                                                                                ,
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA'                                                                 ,
+  list('\\url{https://jarbet.github.io/presentation-regression-diagnostics/regression_diagnostics.html}\\newline \\hspace{1cm} \\newline')       ,
 
-  '2024',
-  'Causal inference with observational data using propensity score matching',
-  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentation-causal-inference-matching/causal_inference_matching.html}\\newline \\hspace{1cm} \\newline'
-        ),
+  '2024'                                                                                                                                         ,
+  'Causal inference with observational data using propensity score matching'                                                                     ,
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA'                                                    ,
+  list('\\url{https://jarbet.github.io/presentation-causal-inference-matching/causal_inference_matching.html}\\newline \\hspace{1cm} \\newline') ,
 
- '2023',
-  'Automatic feature selection and engineering with MARS',
-  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentation-mars.github.io/presentation-mars.html}\\newline \\hspace{1cm} \\newline'
-        ),
+  '2023'                                                                                                                                         ,
+  'Automatic feature selection and engineering with MARS'                                                                                        ,
+  'Statistics Working Group, Cancer Data Sciences, University of California, Los Angeles, CA'                                                    ,
+  list('\\url{https://jarbet.github.io/presentation-mars.github.io/presentation-mars.html}\\newline \\hspace{1cm} \\newline')                    ,
 
-  '2022',
-  'Introduction to Bayesian statistics',
-  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentations/2022-08-25_Bayesian_stats.pdf}\\newline \\hspace{1cm} \\newline'
-        ),
+  '2022'                                                                                                                                         ,
+  'Introduction to Bayesian statistics'                                                                                                          ,
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA'                                                                 ,
+  list('\\url{https://jarbet.github.io/presentations/2022-08-25_Bayesian_stats.pdf}\\newline \\hspace{1cm} \\newline')                           ,
 
-  '2021',
-  'Multiomics cancer data analysis',
-  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA',
-  list(
-      '\\url{https://jarbet.github.io/presentations/2021-11-21_multiomics_cancer.pdf}\\newline \\hspace{1cm} \\newline'
-        ),
+  '2021'                                                                                                                                         ,
+  'Multiomics cancer data analysis'                                                                                                              ,
+  'Boutros Lab, Cancer Data Sciences, University of California, Los Angeles, CA'                                                                 ,
+  list('\\url{https://jarbet.github.io/presentations/2021-11-21_multiomics_cancer.pdf}\\newline \\hspace{1cm} \\newline')                        ,
 
- '2021',
-  'Interpretable machine learning',
-  'Center for Innovative Design and Analysis, University of Colorado, Denver, CO',
-  list(
-      '\\url{https://jarbet.github.io/presentations/2020-01-21_interpretable_machine_learning.pdf}\\newline \\hspace{1cm} \\newline'
-        ),
+  '2021'                                                                                                                                         ,
+  'Interpretable machine learning'                                                                                                               ,
+  'Center for Innovative Design and Analysis, University of Colorado, Denver, CO'                                                                ,
+  list('\\url{https://jarbet.github.io/presentations/2020-01-21_interpretable_machine_learning.pdf}\\newline \\hspace{1cm} \\newline')           ,
 
- '2021',
-  'Differential Network Analysis of Gene Modules',
-  'Systems Genetics and Bioinformatics Research Lab, University of Colorado, Denver, CO',
-  NULL,
+  '2021'                                                                                                                                         ,
+  'Differential Network Analysis of Gene Modules'                                                                                                ,
+  'Systems Genetics and Bioinformatics Research Lab, University of Colorado, Denver, CO'                                                         ,
+  NULL                                                                                                                                           ,
 
- '2018',
- 'Frequentist versus Bayesian Approaches to Statistics: A Debate',
-  'Department of Biostatistics and Informatics, University of Colorado, Denver, CO',
-  NULL,
+  '2018'                                                                                                                                         ,
+  'Frequentist versus Bayesian Approaches to Statistics: A Debate'                                                                               ,
+  'Department of Biostatistics and Informatics, University of Colorado, Denver, CO'                                                              ,
+  NULL                                                                                                                                           ,
 
- '2017',
- 'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies',
-  'University of Minnesota Biostatistics Student Seminar Series, Minneapolis, MN',
-  NULL,
+  '2017'                                                                                                                                         ,
+  'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies'                                                           ,
+  'University of Minnesota Biostatistics Student Seminar Series, Minneapolis, MN'                                                                ,
+  NULL                                                                                                                                           ,
 
- '2016',
- 'A General framework for Association Tests with Multivariate Traits in Large-Scale Genomics Studies',
-  'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN',
-  NULL,
+  '2016'                                                                                                                                         ,
+  'A General framework for Association Tests with Multivariate Traits in Large-Scale Genomics Studies'                                           ,
+  'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN'                                                                   ,
+  NULL                                                                                                                                           ,
 
-  '2016',
- 'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies',
-  'School of Public Health Research Day, University of Minnesota, Minneapolis, MN',
-  NULL,
+  '2016'                                                                                                                                         ,
+  'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies'                                                ,
+  'School of Public Health Research Day, University of Minnesota, Minneapolis, MN'                                                               ,
+  NULL                                                                                                                                           ,
 
- '2016',
- 'Penalized Regression for High-Dimensional Genetic Association Testing',
-  'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN',
+  '2016'                                                                                                                                         ,
+  'Penalized Regression for High-Dimensional Genetic Association Testing'                                                                        ,
+  'University of Minnesota Statistical Genetics Journal Club, Minneapolis, MN'                                                                   ,
   NULL
 ) %>%
   detailed_entries(
@@ -409,7 +358,7 @@ tribble(
     why = Notes,
     when = Year,
     .protect = FALSE
-    )
+  )
 ```
 
 
@@ -417,58 +366,55 @@ tribble(
 
 ```{r}
 tribble(
-  ~Year, ~Name, ~Location, ~Notes, ~Type,
+  ~Year                                                                                                                                 , ~Name , ~Location , ~Notes , ~Type ,
 
-  '2025',
-  'The Landscape of Prostate Tumour Methylation',
-  'UCLA Health Jonsson Comprehensive Cancer Center Annual Symposium, Los Angeles, CA',
-  NULL,
-  'Poster',
+  '2025'                                                                                                                                ,
+  'The Landscape of Prostate Tumour Methylation'                                                                                        ,
+  'UCLA Health Jonsson Comprehensive Cancer Center Annual Symposium, Los Angeles, CA'                                                   ,
+  NULL                                                                                                                                  ,
+  'Poster'                                                                                                                              ,
 
-  '2024',
-  'Methylome-Genome Interactions Define Disease Aggression in Localized Prostate Cancer',
-  'RECOMB/ISCB Conference on Regulatory and Systems Genomics, Los Angeles, CA',
-  NULL,
-  'Poster',
+  '2024'                                                                                                                                ,
+  'Methylome-Genome Interactions Define Disease Aggression in Localized Prostate Cancer'                                                ,
+  'RECOMB/ISCB Conference on Regulatory and Systems Genomics, Los Angeles, CA'                                                          ,
+  NULL                                                                                                                                  ,
+  'Poster'                                                                                                                              ,
 
-  '2022',
-  'Triplet matching: propensity score matching with 3 groups',
-  '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)',
-  list(
-      '\\url{https://jarbet.github.io/presentations/20220422_triplet_matching.pdf}\\newline \\hspace{1cm} \\newline'
-        ),
-  'Talk',
+  '2022'                                                                                                                                ,
+  'Triplet matching: propensity score matching with 3 groups'                                                                           ,
+  '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)'                                                      ,
+  list('\\url{https://jarbet.github.io/presentations/20220422_triplet_matching.pdf}\\newline \\hspace{1cm} \\newline')                  ,
+  'Talk'                                                                                                                                ,
 
-  '2022',
-  'Statistical Considerations and Methods to Utilize Real World Evidence in Medical Device Evaluation',
-  '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)',
-  NULL,
-  'Panel Co-organizer',
+  '2022'                                                                                                                                ,
+  'Statistical Considerations and Methods to Utilize Real World Evidence in Medical Device Evaluation'                                  ,
+  '14th Annual FDA/AdvaMed Medical Device Statistical Issues Conference (Virtual)'                                                      ,
+  NULL                                                                                                                                  ,
+  'Panel Co-organizer'                                                                                                                  ,
 
-  '2017',
-  'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies using Generalized Estimating Equations',
-  'Joint Statistical Meetings (JSM), Baltimore, MD',
-  NULL,
-  'Poster',
+  '2017'                                                                                                                                ,
+  'Robust Estimation of Genetic and Environmental Variance Components in Twin Studies using Generalized Estimating Equations'           ,
+  'Joint Statistical Meetings (JSM), Baltimore, MD'                                                                                     ,
+  NULL                                                                                                                                  ,
+  'Poster'                                                                                                                              ,
 
-  '2016',
-  'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies',
-  'Eastern North American Region International Biometric Society (ENAR), Austin, TX',
-  NULL,
-  'Poster',
+  '2016'                                                                                                                                ,
+  'Methods of Inference for Penalized Regression in High-Dimensional Genetic Association Studies'                                       ,
+  'Eastern North American Region International Biometric Society (ENAR), Austin, TX'                                                    ,
+  NULL                                                                                                                                  ,
+  'Poster'                                                                                                                              ,
 
-  '2013',
-  'What now? Post-Hoc Approaches for Gene-based Rare-Variant Tests of Association',
-  'American Society of Human Genetics Conference (ASHG), Boston, MA',
-  NULL,
-  'Poster',
+  '2013'                                                                                                                                ,
+  'What now? Post-Hoc Approaches for Gene-based Rare-Variant Tests of Association'                                                      ,
+  'American Society of Human Genetics Conference (ASHG), Boston, MA'                                                                    ,
+  NULL                                                                                                                                  ,
+  'Poster'                                                                                                                              ,
 
-  '2013',
-  'General Approaches for Combining Rare Variant Association Tests Provide Improved Power Across a Wide Range of Genetic Architectures',
-  'American Society of Human Genetics Conference (ASHG), Boston, MA',
-  NULL,
+  '2013'                                                                                                                                ,
+  'General Approaches for Combining Rare Variant Association Tests Provide Improved Power Across a Wide Range of Genetic Architectures' ,
+  'American Society of Human Genetics Conference (ASHG), Boston, MA'                                                                    ,
+  NULL                                                                                                                                  ,
   'Poster'
-
 ) %>%
   detailed_entries(
     with = Name,
@@ -477,7 +423,7 @@ tribble(
     when = Year,
     where = Type,
     .protect = FALSE
-    )
+  )
 ```
 
 # \faChalkboardTeacher \text{ Teaching Experience}
@@ -486,95 +432,76 @@ tribble(
 
 ```{r}
 tribble(
-  ~ Year,
-  ~ Name,
-  ~ Duty,
-  ~ Desc,
-  'Fall 2019',
-  "BIOS 6601 – Applied Biostatistics I",
-  "University of Colorado Anschutz Medical Campus",
-  list(
-       "\\textbf{\\textit{Duty}}: Sole Instructor, completely redesigned all lectures, homework, quizzes, and exams",
-       "\\textbf{\\textit{Description}}: Applied biostatistical methods including descriptive and statistical inference; odds ratio and relative risk, probability theory, parameter estimation, tests for comparing statistics of two or more groups, correlation, linear regression, logistic regression and survival analysis.",
-    "\\textbf{\\textit{Credits}}: 3",
-    "\\textbf{\\textit{Audience}}: 75 Masters of Public Health (MPH) students\\newline \\hspace{1cm} \\newline"
-    )
+  ~Year                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  ~Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  ~Duty                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  ~Desc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  'Fall 2019'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ,
+  "BIOS 6601 – Applied Biostatistics I"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ,
+  "University of Colorado Anschutz Medical Campus"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ,
+  list("\\textbf{\\textit{Duty}}: Sole Instructor, completely redesigned all lectures, homework, quizzes, and exams", "\\textbf{\\textit{Description}}: Applied biostatistical methods including descriptive and statistical inference; odds ratio and relative risk, probability theory, parameter estimation, tests for comparing statistics of two or more groups, correlation, linear regression, logistic regression and survival analysis.", "\\textbf{\\textit{Credits}}: 3", "\\textbf{\\textit{Audience}}: 75 Masters of Public Health (MPH) students\\newline \\hspace{1cm} \\newline")
 ) %>%
   detailed_entries(
-      where = Year,
-      with = Name,
-      what = Duty,
-      why = Desc,
-      .protect = FALSE
-      )
+    where = Year,
+    with = Name,
+    what = Duty,
+    why = Desc,
+    .protect = FALSE
+  )
 ```
 
 ## \faSquare \ \ \text{Short courses}
 
 ```{r}
 tribble(
-  ~ Year,
-  ~ Name,
-  ~ Duty,
-  ~ Desc,
-  'Summer 2019, Fall 2020',
-  "Fundamentals of Data Science Literacy",
-  "University of Colorado Anschutz Medical Campus",
-  list(
-       "\\textbf{\\textit{Duty}}: lead organizer, developed and taught 3 machine learning lectures",
-       "\\textbf{\\textit{Description}}: 6-week short course (2 hours/week) on data science with emphasis on how machine learning and data mining are used in biomedical research.  Topics included: 1) Overview of Data Science; 2) Introduction of Machine Learning in Biomedical Research; 3) Clustering and Pattern Finding (unsupervised Machine Learning); 4) Powerful Predictive Models and Variable Selection (supervised Machine Learning); 5) Fundamentals of Data Visualization; 6): Reproducible Research and Team Science",
-    "\\textbf{\\textit{Audience}}: ~20 medical researchers, mostly non-statisticians\\newline \\hspace{1cm} \\newline"
-    ),
+  ~Year                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+  ~Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+  ~Duty                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+  ~Desc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ,
+  'Summer 2019, Fall 2020'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ,
+  "Fundamentals of Data Science Literacy"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ,
+  "University of Colorado Anschutz Medical Campus"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ,
+  list("\\textbf{\\textit{Duty}}: lead organizer, developed and taught 3 machine learning lectures", "\\textbf{\\textit{Description}}: 6-week short course (2 hours/week) on data science with emphasis on how machine learning and data mining are used in biomedical research.  Topics included: 1) Overview of Data Science; 2) Introduction of Machine Learning in Biomedical Research; 3) Clustering and Pattern Finding (unsupervised Machine Learning); 4) Powerful Predictive Models and Variable Selection (supervised Machine Learning); 5) Fundamentals of Data Visualization; 6): Reproducible Research and Team Science", "\\textbf{\\textit{Audience}}: ~20 medical researchers, mostly non-statisticians\\newline \\hspace{1cm} \\newline") ,
 
-  'Summer 2019, 2020',
-  "Introduction to Statistics",
-  "University of Colorado Anschutz Medical Campus",
-  list(
-       "\\textbf{\\textit{Duty}}: Instructor, developed and taught lectures on “Introduction to statistics”, study design, and survey design",
-       "\\textbf{\\textit{Description}}: Introductory statistics day-long short course for UCHealth nurses",
-    "\\textbf{\\textit{Audience}}: ~15 UCHealth Nurses\\newline \\hspace{1cm} \\newline"
-    )
+  'Summer 2019, 2020'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ,
+  "Introduction to Statistics"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ,
+  "University of Colorado Anschutz Medical Campus"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ,
+  list("\\textbf{\\textit{Duty}}: Instructor, developed and taught lectures on “Introduction to statistics”, study design, and survey design", "\\textbf{\\textit{Description}}: Introductory statistics day-long short course for UCHealth nurses", "\\textbf{\\textit{Audience}}: ~15 UCHealth Nurses\\newline \\hspace{1cm} \\newline")
 ) %>%
   detailed_entries(
-      where = Year,
-      with = Name,
-      what = Duty,
-      why = Desc,
-      .protect = FALSE
-      )
+    where = Year,
+    with = Name,
+    what = Duty,
+    why = Desc,
+    .protect = FALSE
+  )
 ```
 
 ## \faSquare \ \ \text{Guest Lectures}
 
 ```{r}
 tribble(
-  ~ Year,
-  ~ Name,
-  ~ Duty,
-  ~ Desc,
-  'Nov 2019, Oct 2020',
-  "IPHY 5900 – Data Literacy in Biomedical Research",
-  "University of Colorado Boulder",
-  list(
-       "\\textbf{\\textit{Primary Instructor}}: Dr. Celine Marie Claire D. Vetter, Integrative Physiology",
-       "\\textbf{\\textit{Lecture}}: Machine Learning in Biomedical Research\\newline \\hspace{1cm} \\newline"
-    ),
+  ~Year                                                                                                                                                                                                              ,
+  ~Name                                                                                                                                                                                                              ,
+  ~Duty                                                                                                                                                                                                              ,
+  ~Desc                                                                                                                                                                                                              ,
+  'Nov 2019, Oct 2020'                                                                                                                                                                                               ,
+  "IPHY 5900 – Data Literacy in Biomedical Research"                                                                                                                                                                 ,
+  "University of Colorado Boulder"                                                                                                                                                                                   ,
+  list("\\textbf{\\textit{Primary Instructor}}: Dr. Celine Marie Claire D. Vetter, Integrative Physiology", "\\textbf{\\textit{Lecture}}: Machine Learning in Biomedical Research\\newline \\hspace{1cm} \\newline") ,
 
-  'Fall 2018',
-  "BIOS 6611 – Biostatistical Methods I",
-  "University of Colorado School of Public Health",
-  list(
-       "\\textbf{\\textit{Primary Instructor}}: Dr. Alex Kaizer",
-       "\\textbf{\\textit{Lecture}}: Linear Algebra Review\\newline \\hspace{1cm} \\newline"
-    )
+  'Fall 2018'                                                                                                                                                                                                        ,
+  "BIOS 6611 – Biostatistical Methods I"                                                                                                                                                                             ,
+  "University of Colorado School of Public Health"                                                                                                                                                                   ,
+  list("\\textbf{\\textit{Primary Instructor}}: Dr. Alex Kaizer", "\\textbf{\\textit{Lecture}}: Linear Algebra Review\\newline \\hspace{1cm} \\newline")
 ) %>%
   detailed_entries(
-      where = Year,
-      with = Name,
-      what = Duty,
-      why = Desc,
-      .protect = FALSE
-      )
+    where = Year,
+    with = Name,
+    what = Duty,
+    why = Desc,
+    .protect = FALSE
+  )
 ```
 
 \newpage
