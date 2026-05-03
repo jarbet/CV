@@ -155,6 +155,7 @@ bibliography_entries("submitted.bib")
 bibliography_entries("jaron_published_orcid.bib")
 ```
 
+\newpage
 
 # \faAward \text{ Awards}
 
@@ -426,6 +427,8 @@ tribble(
   )
 ```
 
+\newpage
+
 # \faChalkboardTeacher \text{ Teaching Experience}
 
 ## \faSquare \ \ \text{Semester courses}
@@ -504,8 +507,6 @@ tribble(
   )
 ```
 
-\newpage
-
 # \faUsers \text{ Mentoring and supervising}
 
 ## \faSquare \ \ \text{University of California Los Angeles}
@@ -561,7 +562,6 @@ tribble(
 
 - Education Committee, Fall 2018 – Jan 2020
 
-\newpage
 
 # \faDesktop \text{ Software Skills}
 
