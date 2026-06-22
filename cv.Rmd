@@ -141,10 +141,13 @@ tribble(
     .protect = FALSE
   )
 ```
+<!--
 
 # \faBook \text{ Manscripts submitted for review}
 
+-->
 ```{r}
+#| eval: false
 bibliography_entries("submitted.bib")
 ```
 
