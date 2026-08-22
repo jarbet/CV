@@ -46,6 +46,7 @@ library(vitae)
 library(tibble)
 library(RefManageR)
 #rmarkdown::pandoc_version()
+# rmarkdown::render("cv.Rmd")
 ```
 
 # \faBookReader \text{ Research Interests}
@@ -546,9 +547,13 @@ tribble(
 
 ## \faSquare \ \ \text{Journal Reviewer}
 
-- Biometrics
+- Cancer Research
+- Journal of the American Heart Association (JAHA)
 - Genetic Epidemiology
 - PeerJ
+- Biometrics
+- Journal of Open Source Software (JOSS)
+
 
 ## \faSquare \ \ \text{Committees/Other}
 
