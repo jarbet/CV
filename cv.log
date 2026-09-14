@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.9.7)  7 SEP 2026 09:25
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.9.14)  14 SEP 2026 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,7 +382,7 @@ LaTeX Font Info:    Trying to load font information for TU+fontawesomefree on in
 (/home/runner/.TinyTeX/texmf-dist/tex/latex/fontawesome5/tufontawesomefree.fd)
 LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on input line 70.
 (/home/runner/.TinyTeX/texmf-dist/tex/latex/fontawesome5/tufontawesomebrands.fd))) (/home/runner/.TinyTeX/texmf-dist/tex/latex/academicons/academicons.sty
-Package: academicons 2025/09/20 v1.9.6-2 Academicons Icons
+Package: academicons 2026/09/09 v1.9.6-3 Academicons Icons
 Missing character: There is no   (U+0020) in font [academicons.otf]/OT!
 Missing character: There is no   (U+0020) in font [academicons.otf]/OT!
 Missing character: There is no   (U+0020) in font [academicons.otf]/OT:language=dflt;!
@@ -968,219 +968,219 @@ LaTeX Font Info:    Font shape `TU/SourceSans3(0)/b/n' will be
 LaTeX Font Info:    Font shape `TU/SourceSans3(0)/m/it' will be
 (Font)              scaled to size 10.95pt on input line 268.
 
-Overfull \hbox (0.66261pt too wide) in paragraph at lines 277--281
+Overfull \hbox (0.66261pt too wide) in paragraph at lines 278--282
 \TU/SourceSans3(0)/m/n/10.95 matic genomics nextflow pipeline. \TU/SourceSans3(0)/m/it/10.95 Cell Reports Methods\TU/SourceSans3(0)/m/n/10.95 , \TU/SourceSans3(0)/m/it/10.95 6\TU/SourceSans3(0)/m/n/10.95 (3), 101340. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [] [] [][][][][][] []
  []
 
 
-Overfull \hbox (36.57146pt too wide) in paragraph at lines 320--324
+Overfull \hbox (36.57146pt too wide) in paragraph at lines 321--325
 []\TU/SourceSans3(0)/m/n/10.95 10. Ni, K., Rogowitz, E., Farahmand, A. K., … Saxon, D. R. (2024). Weight loss outcomes in a veterans affairs pharmacotherapy-
  []
 
 [2]
-Overfull \hbox (37.12245pt too wide) in paragraph at lines 382--386
+Overfull \hbox (37.12245pt too wide) in paragraph at lines 383--387
 \TU/SourceSans3(0)/m/n/10.95 during the COVID-19 pandemic. \TU/SourceSans3(0)/m/it/10.95 Nurse Educator\TU/SourceSans3(0)/m/n/10.95 , \TU/SourceSans3(0)/m/it/10.95 46\TU/SourceSans3(0)/m/n/10.95 (4), 215–220. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][] [] [][][][][][][][][][][][][][][][]$[] 
  []
 
 
-Overfull \hbox (17.63873pt too wide) in paragraph at lines 388--392
+Overfull \hbox (17.63873pt too wide) in paragraph at lines 389--393
 \TU/SourceSans3(0)/m/n/10.95 provider identifier. \TU/SourceSans3(0)/m/it/10.95 Clinical Nurse Specialist\TU/SourceSans3(0)/m/n/10.95 , \TU/SourceSans3(0)/m/it/10.95 35\TU/SourceSans3(0)/m/n/10.95 (3), 119–128. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [][][] [] [][][][][][][][][][][][][][][][]$[] 
  []
 
 
-Overfull \hbox (4.1082pt too wide) in paragraph at lines 400--404
+Overfull \hbox (4.1082pt too wide) in paragraph at lines 401--405
 \TU/SourceSans3(0)/m/n/10.95 19 pandemic. \TU/SourceSans3(0)/m/it/10.95 Journal of Professional Nursing\TU/SourceSans3(0)/m/n/10.95 , \TU/SourceSans3(0)/m/it/10.95 37\TU/SourceSans3(0)/m/n/10.95 (4), 721–728. []$[][][][][] [] [] [] [][][] [] [][][] [] [][] [] [][][][] [] [] [] [][][][][][][][] [] [][][][] []
  []
 
 [3]
-Overfull \hbox (15.649pt too wide) in paragraph at lines 510--513
+Overfull \hbox (15.649pt too wide) in paragraph at lines 511--514
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 510--513
+Overfull \hbox (15.649pt too wide) in paragraph at lines 511--514
 [] 
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 531--534
+Overfull \hbox (15.649pt too wide) in paragraph at lines 532--535
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 531--534
+Overfull \hbox (15.649pt too wide) in paragraph at lines 532--535
 [] 
  []
 
 LaTeX Font Info:    Font shape `TU/SourceSans3(3)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 554.
+(Font)              scaled to size 6.0pt on input line 555.
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 554--560
+Overfull \hbox (15.649pt too wide) in paragraph at lines 555--561
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 554--560
+Overfull \hbox (15.649pt too wide) in paragraph at lines 555--561
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 554--560
+Overfull \hbox (15.649pt too wide) in paragraph at lines 555--561
 [] 
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 582--584
+Overfull \hbox (15.649pt too wide) in paragraph at lines 583--585
 [][] 
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 604--639
+Overfull \hbox (15.649pt too wide) in paragraph at lines 605--640
 [] 
  []
 
 [4]
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 []
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 657--668
+Overfull \hbox (15.649pt too wide) in paragraph at lines 658--669
 [] 
  []
 
 [5]
 LaTeX Font Info:    Font shape `TU/SourceSans3(3)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 695.
+(Font)              scaled to size 9.0pt on input line 696.
 LaTeX Font Info:    Font shape `TU/SourceSans3(3)/b/it' will be
-(Font)              scaled to size 9.0pt on input line 695.
+(Font)              scaled to size 9.0pt on input line 696.
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 695--697
+Overfull \hbox (15.649pt too wide) in paragraph at lines 696--698
 [][] 
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 719--726
+Overfull \hbox (15.649pt too wide) in paragraph at lines 720--727
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 719--726
+Overfull \hbox (15.649pt too wide) in paragraph at lines 720--727
 [] 
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 747--753
+Overfull \hbox (15.649pt too wide) in paragraph at lines 748--754
 [][]
  []
 
 
-Overfull \hbox (15.649pt too wide) in paragraph at lines 747--753
+Overfull \hbox (15.649pt too wide) in paragraph at lines 748--754
 [] 
  []
 
@@ -1194,8 +1194,8 @@ Package rerunfilecheck Info: File `cv.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  33520 strings out of 469768
- 683066 string characters out of 5468129
- 1283083 words of memory out of 5000000
+ 683066 string characters out of 5468128
+ 1284037 words of memory out of 5000000
  61958 multiletter control sequences out of 15000+600000
  631799 words of font info for 138 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
